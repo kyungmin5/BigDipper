@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".HomeFragment">
+
+    <LinearLayout
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_marginTop="25dp"
+            android:textAlignment="center"
+            android:id="@+id/NoBookClubJoinedTitle"
+            android:paddingHorizontal="30dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="25sp"
+            android:textColor="@color/black_main"
+            android:text="@string/no_bookclub_joined_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_marginTop="-40dp"
+            android:id="@+id/noBookClubJoinedImg"
+            app:lottie_rawRes="@raw/no_bookclub"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/NoBookClubJoinedDetails"
+            android:paddingHorizontal="30dp"
+            android:textSize="17sp"
+            android:textColor="@color/black_main"
+            android:text="@string/no_bookclub_joined_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/exploreBookClubBtn"
+            android:textColor="@color/white"
+            android:background="@drawable/radius"
+            android:textSize="15sp"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="둘 러 보 기" />
+    </LinearLayout>
+
+
+</LinearLayout>

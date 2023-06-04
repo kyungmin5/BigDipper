@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeActivity">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+            <me.relex.circleindicator.CircleIndicator3
+                android:layout_marginTop="20dp"
+                android:id="@+id/welcomePageIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                app:ci_drawable="@drawable/circleindicator_round"
+                />
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/welcomeGuideView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+            </androidx.viewpager2.widget.ViewPager2>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <Button
+                android:id="@+id/welcomeContinueBtn"
+                android:textColor="@color/white"
+                android:background="@drawable/radius"
+                android:textSize="15sp"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:text="계 속 하 기" />
+        </LinearLayout>
+</LinearLayout>
