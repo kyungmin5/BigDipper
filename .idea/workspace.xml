@@ -9,13 +9,20 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f4162a-23f1-4fc6-97b4-1752cb4d2717" name="Changes" comment="" />
+    <list default="true" id="c3f4162a-23f1-4fc6-97b4-1752cb4d2717" name="Changes" comment="참여 중인 북클럽까지 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 제목과 설명만 구현">
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/ExploreFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/ExploreFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/minboy/.android/avd/Nexus_5_API_33.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/gyurikim/.android/avd/FinalProjDevice.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -59,11 +66,29 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
+        <option value="resourceFile" />
+        <option value="valueResourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2QSKYLvC81eCPx9wgFKGQyWHfWk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -76,9 +101,31 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/drawable-v24&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/drawable-v24&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/raw" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/raw" />
+    </key>
+    <key name="android.template.557429147">
+      <recent name="com.example.bigdipper" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.example.bigdipper" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="BigDipper.app.main" />
@@ -148,6 +195,29 @@
       <option name="presentableId" value="Default" />
       <updated>1685341589282</updated>
     </task>
+    <task id="LOCAL-00001" summary="참여 중인 북클럽까지 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 제목과 설명만 구현">
+      <created>1685905679220</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685905679220</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="참여 중인 북클럽까지 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 제목과 설명만 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="참여 중인 북클럽까지 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 제목과 설명만 구현" />
   </component>
 </project>

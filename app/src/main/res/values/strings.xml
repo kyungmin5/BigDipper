@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">BigDipper</string>
+    <string name="app_name_kr">북두칠성</string>
+    <!-- 홈 화면-->
+    <string name="no_bookclub_joined_title">아직 참여 중인\n북클럽이 없네요 😔</string>
+    <string name="no_bookclub_joined_details">북두칠성의 북클럽에서\n수많은 사람들을 만나보세요! :)</string>
+    <string name="joined_bookclub_title">참여 중인 북클럽 🔥</string>
+    <string name="joined_bookclub_details">000님, 독서하기 좋은 하루입니다!! 🏃🏻📖</string>
+    <!-- 북클럽 화면-->
+    <string name="explore_title">북클럽 둘러보기 📚</string>
+    <string name="explore_details">나와 같은 취향과 관심사를 가진\n북클럽에 참여해보세요! :)</string>
 </resources>

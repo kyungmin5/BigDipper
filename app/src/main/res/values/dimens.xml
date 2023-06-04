@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tag_padding_horizontal">6dp</dimen>
+    <dimen name="tag_padding_vertical">2dp</dimen>
+    <dimen name="tag_right_margin">3dp</dimen>
+</resources>
