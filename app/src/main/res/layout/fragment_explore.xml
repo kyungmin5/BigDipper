@@ -1,34 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ExploreFragment">
-
-    <TextView
-        android:id="@+id/joinedBookClubTitle"
-        android:paddingHorizontal="30dp"
-        android:fontFamily="@font/notosanskr_bold"
-        android:textSize="30sp"
-        android:textColor="@color/black_main"
-        android:text="@string/joined_bookclub_title"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:paddingHorizontal="30dp"
+            android:layout_marginTop="13dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:includeFontPadding="false"
+                android:paddingVertical="5dp"
+                android:id="@+id/joinedBookClubTitle"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="28sp"
+                android:textColor="@color/black_main"
+                android:text="@string/explore_title"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/explore_filter"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/round_filter_list_24" />
+        </LinearLayout>
+        <TextView
+            android:paddingHorizontal="30dp"
+            android:paddingBottom="5dp"
+            android:includeFontPadding="false"
+            android:id="@+id/joinedBookClubDetails"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="15sp"
+            android:text="@string/explore_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.SearchView
+            android:layout_marginBottom="10dp"
+            app:queryBackground="@android:color/transparent"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/search_background"
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:focusable="true"
+            app:iconifiedByDefault="false"
+            app:queryHint="@string/explore_search_hint" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bookClubList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/joinedBookClubDetails"
-        android:layout_marginTop="-30dp"
-        android:fontFamily="@font/notosanskr_medium"
-        android:paddingHorizontal="30dp"
-        android:textSize="17sp"
-        android:text="@string/joined_bookclub_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/createBookClubFab"
+        android:contentDescription="createBookClubBtn"
+        app:borderWidth="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="?attr/colorPrimary"
+        android:src="@drawable/round_add_24"
+        app:tint="@android:color/white"
+        android:layout_margin="16dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/bookClubList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-</LinearLayout>
+</RelativeLayout>

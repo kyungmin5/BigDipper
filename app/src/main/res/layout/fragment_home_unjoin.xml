@@ -51,11 +51,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <Button
+            android:includeFontPadding="false"
             android:layout_gravity="center"
             android:id="@+id/exploreBookClubBtn"
             android:textColor="@color/white"
+            android:fontFamily="@font/notosanskr_bold"
             android:background="@drawable/radius"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:gravity="center"

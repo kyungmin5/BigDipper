@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 // 북클럽 가입 여부에 따른 flag
-private var join = true;
+private var join = false;
 
 class HomeFragment : Fragment() {
     // TODOLIST: Rename and change types of parameters

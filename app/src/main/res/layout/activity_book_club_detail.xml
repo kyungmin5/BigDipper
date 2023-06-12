@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookClubDetail">
+    <LinearLayout
+        android:layout_gravity="top|left"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            app:srcCompat="@drawable/round_keyboard_arrow_left_24" />
+    </LinearLayout>
+
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:contentDescription="bookClubDetails"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bookclub_placeholder_img"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:includeFontPadding="false"
+                    android:id="@+id/bookClubName"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="20dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/black_main"
+                    android:text="클럽 이름"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:includeFontPadding="false"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:id="@+id/bookClubDetails"
+                    android:paddingHorizontal="20dp"
+                    android:textSize="17sp"
+                    android:text="북클럽 상세 설명"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:includeFontPadding="false"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="20dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/black_main"
+                    android:text="클럽 정보"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:includeFontPadding="false"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:paddingHorizontal="20dp"
+                    android:textSize="17sp"
+                    android:text="북클럽 정보 나열"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:includeFontPadding="false"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="20dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/black_main"
+                    android:text="클럽 규칙"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:includeFontPadding="false"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:id="@+id/bookClubRules"
+                    android:paddingHorizontal="20dp"
+                    android:textSize="17sp"
+                    android:text="북클럽 이용 규칙에 대해 정해주세요"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:includeFontPadding="false"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="20dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/black_main"
+                    android:text="리더 소개"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:includeFontPadding="false"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:id="@+id/bookClubLeader"
+                    android:paddingHorizontal="20dp"
+                    android:textSize="17sp"
+                    android:text="북클럽 리더 소개"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:includeFontPadding="false"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="20dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/black_main"
+                    android:text="함께 읽은 책"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:includeFontPadding="false"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:id="@+id/booksReadTogether"
+                    android:paddingHorizontal="20dp"
+                    android:textSize="17sp"
+                    android:text="함께 읽은 책"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:background="@color/design_default_color_primary"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:fontFamily="@font/notosanskr_bold"
+        android:text="북클럽 가입하기"
+        android:textSize="20sp"
+        android:layout_gravity="right|bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</FrameLayout>
