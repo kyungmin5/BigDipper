@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bigdipper.databinding.FragmentFilterSheetBinding
 
 // TODOLIST: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,6 +42,7 @@ class ExploreFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_explore, container, false)
         val bookClubList = view.findViewById<RecyclerView>(R.id.bookClubList)
+        val clubFilterBtn = view.findViewById<ImageView>(R.id.explore_filter)
         bookClubList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         adapter =  BookClubAdapter(dummyGenerator())
         adapter.itemClickListener = object:BookClubAdapter.onItemClickListener{
@@ -47,6 +51,9 @@ class ExploreFragment : Fragment() {
             }
         }
         bookClubList.adapter = adapter
+        clubFilterBtn.setOnClickListener {
+            FilterSheet().show(requireActivity().supportFragmentManager, "filter")
+        }
         return view
     }
 

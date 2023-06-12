@@ -7,22 +7,26 @@
     tools:context=".HomeFragment">
 
     <TextView
+        android:includeFontPadding="false"
         android:id="@+id/exploreTitle"
-        android:paddingHorizontal="27dp"
+        android:layout_marginTop="13dp"
+        android:paddingTop="5dp"
+        android:paddingHorizontal="30dp"
         android:fontFamily="@font/notosanskr_bold"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:textColor="@color/black_main"
-        android:text="@string/explore_title"
+        android:text="@string/joined_bookclub_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:layout_marginTop="-30dp"
+        android:includeFontPadding="false"
+        android:paddingBottom="5dp"
         android:fontFamily="@font/notosanskr_medium"
         android:id="@+id/exploreDetails"
         android:paddingHorizontal="30dp"
-        android:textSize="17sp"
-        android:text="@string/explore_details"
+        android:textSize="15sp"
+        android:text="@string/joined_bookclub_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
