@@ -9,41 +9,42 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f4162a-23f1-4fc6-97b4-1752cb4d2717" name="Changes" comment="홈, 북클럽 탭 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 RecyclerView까지 구현">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/BookClubDetail.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/FilterSheet.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_swipe_vertical_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bottom_sheet_shape.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/round_add_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/round_filter_list_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/round_keyboard_arrow_left_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/search_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_book_club_detail.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/filter_layout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_filter_sheet.xml" afterDir="false" />
+    <list default="true" id="c3f4162a-23f1-4fc6-97b4-1752cb4d2717" name="Changes" comment="북클럽 필터 구현 완료&#10;북클럽 검색창 구현 완료&#10;북클럽 상세페이지 구현 완료">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/FilterData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/FilterOptionSingleton.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/FilterViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_calendar_month_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/container_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/round_restart_alt_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/filter_not_found.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/BookClubAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/BookClubAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/BookClubData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/BookClubData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/BookClubDetail.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/BookClubDetail.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/ExploreFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/ExploreFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/FilterSheet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/FilterSheet.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/bigdipper/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_book_club_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_book_club_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/filter_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/filter_layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_explore.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_explore.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_filter_sheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_filter_sheet.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home_unjoin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home_unjoin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R3CNC0ESGGT]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/gyurikim/.android/avd/FinalProjDevice.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -90,10 +91,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="valueResourceFile" />
-        <option value="resourceFile" />
         <option value="layoutResourceFile" />
+        <option value="Kotlin Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -118,21 +119,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/drawable-v24&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/drawable-v24&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "android-custom-view/Users/gyurikim/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED": "RecyclerView",
+    "cidr.known.project.marker": "true",
+    "last_directory_selection": "/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/drawable-v24",
+    "last_opened_file_path": "/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/raw"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="android.template.1502556890">
+      <recent name="com.example.bigdipper" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
       <recent name="$PROJECT_DIR$/app/src/main/res/raw" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/res/font" />
@@ -262,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685927178644</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="북클럽 상세페이지, 탐색 페이지(필터, 검색창) UI 개발">
+      <created>1686547652993</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686547652993</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,6 +308,8 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/grit' into grit&#10;&#10;# Conflicts:&#10;#&#9;.idea/deploymentTargetDropDown.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/src/main/java/com/example/bigdipper/ExploreFragment.kt&#10;#&#9;app/src/main/java/com/example/bigdipper/MainActivity.kt&#10;#&#9;app/src/main/res/layout/activity_main.xml&#10;#&#9;app/src/main/res/layout/row.xml" />
     <MESSAGE value="홈, 북클럽 탭 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 RecyclerView까지 구현&#10;- Top Navigation Person Icon 눌렀을 때 내정보 탭으로 이동 구현" />
     <MESSAGE value="홈, 북클럽 탭 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 RecyclerView까지 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="홈, 북클럽 탭 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 RecyclerView까지 구현" />
+    <MESSAGE value="북클럽 상세페이지, 탐색 페이지(필터, 검색창) UI 개발" />
+    <MESSAGE value="북클럽 필터 구현 완료&#10;북클럽 검색창 구현 완료&#10;북클럽 상세페이지 구현 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="북클럽 필터 구현 완료&#10;북클럽 검색창 구현 완료&#10;북클럽 상세페이지 구현 완료" />
   </component>
 </project>

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ExploreFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,7 +29,7 @@
                 android:text="@string/explore_title"
                 android:layout_height="wrap_content"/>
             <ImageView
-                android:id="@+id/explore_filter"
+                android:id="@+id/exploreFilter"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_width="0dp"
@@ -53,13 +54,52 @@
             android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:focusable="true"
+            android:focusable="false"
             app:iconifiedByDefault="false"
             app:queryHint="@string/explore_search_hint" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/bookClubList"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_marginHorizontal="30dp"
+            android:id="@+id/notFound"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.airbnb.lottie.LottieAnimationView
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/filter_not_found"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="180dp" />
+            <TextView
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingVertical="5dp"
+                android:textColor="@color/black_main"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="18sp"
+                android:text="조건에 맞는 북클럽이 없네요"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:includeFontPadding="false"
+                android:paddingVertical="2dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:text="북클럽을 생성해보세요"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
