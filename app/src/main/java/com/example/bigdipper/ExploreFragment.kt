@@ -102,7 +102,7 @@ class ExploreFragment : Fragment() {
             adapter = BookClubAdapter(items)
             adapter.itemClickListener = object : BookClubAdapter.onItemClickListener {
                 override fun onItemClick(data: BookClubData, position: Int) {
-                    val intent = Intent(context, BookClubDetail::class.java)
+                    val intent = Intent(context, BookClubPage::class.java)
                     intent.putExtra("clickedData", data)
                     startActivity(intent)
 
@@ -134,33 +134,40 @@ class ExploreFragment : Fragment() {
                     return true
                 }
             })
-
             createBookClubFab.setOnClickListener {
-
-                // 북클럽 정보 생성
-                val club = BookClubData(
-                    clubImg = "imgstr",
-                    currentBook = "마음의 치유",
-                    clubName = "철학과 생각",
-                    tags = arrayListOf("Self-Improvement/Hobby", "Culture/Art"),
-                    ageGroup = "All ages",
-                    clubDetails = "철학 관련 책을 읽으며 토론을 주로 하는 북클럽입니다. 관심 있는 분 많이 오세요.",
-                    memberNum = "12",
-                    createdAt = "2023-06-15T16:45:00Z",
-                    totalMemberNum = "30",
-                    clubRules = "북클럽 규칙",
-                    booksHaveRead = arrayListOf("읽은 책1", "읽은 책2"),
-                    creator = "북클럽 생성자"
-                )
-
-                val database = FirebaseDatabase.getInstance()
-                val reference = database.reference.child("clubs")
-                reference.push().setValue(club)
-
-
+                val intent = Intent(activity, MakingClub::class.java)
+                startActivity(intent)
             }
         }
     }
+
+
+//            createBookClubFab.setOnClickListener {
+//
+//                // 북클럽 정보 생성
+//                val club = BookClubData(
+//                    clubImg = "imgstr",
+//                    currentBook = "마음의 치유",
+//                    clubName = "철학과 생각",
+//                    tags = arrayListOf("Self-Improvement/Hobby", "Culture/Art"),
+//                    ageGroup = "All ages",
+//                    clubDetails = "철학 관련 책을 읽으며 토론을 주로 하는 북클럽입니다. 관심 있는 분 많이 오세요.",
+//                    memberNum = "12",
+//                    createdAt = "2023-06-15T16:45:00Z",
+//                    totalMemberNum = "30",
+//                    clubRules = "북클럽 규칙",
+//                    booksHaveRead = arrayListOf("읽은 책1", "읽은 책2"),
+//                    creator = "북클럽 생성자"
+//                )
+//
+//                val database = FirebaseDatabase.getInstance()
+//                val reference = database.reference.child("clubs")
+//                reference.push().setValue(club)
+//
+//
+//
+
+
 
     // 더미 데이터 생성 함수
 

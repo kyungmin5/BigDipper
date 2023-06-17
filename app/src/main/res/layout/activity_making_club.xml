@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MakingClub">
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:includeFontPadding="false"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="20dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black_main"
+                android:text="북클럽 이름"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="북클럽 이름"
+                android:id="@+id/clubNameInput"/>
+
+            <TextView
+                android:includeFontPadding="false"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="20dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black_main"
+                android:layout_marginTop="30dp"
+                android:text="북클럽 소개"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="북클럽 소개"
+                android:id="@+id/introInput"/>
+
+            <TextView
+                android:layout_marginTop="30dp"
+                android:includeFontPadding="false"
+                android:id="@+id/personnel"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="20dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black_main"
+                android:text="정원"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="정원"
+                android:id="@+id/personnelInput"/>
+
+            <TextView
+                android:includeFontPadding="false"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="20dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black_main"
+                android:text="선호 연령대"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:id="@+id/ageGroup">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="성인"
+                    android:id="@+id/adult"/>
+                <RadioButton
+                    android:layout_marginHorizontal="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="청소년"
+                    android:id="@+id/teen"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="무관"
+                    android:id="@+id/dontCare"/>
+            </RadioGroup>
+
+            <TextView
+                android:includeFontPadding="false"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="20dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black_main"
+                android:layout_marginTop="30dp"
+                android:text="클럽 규칙"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="클럽 규칙"
+                android:id="@+id/rule"/>
+
+            <TextView
+                android:includeFontPadding="false"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="20dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black_main"
+                android:layout_marginTop="30dp"
+                android:text="함께 읽을 책"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="함께 읽을 책"
+                android:id="@+id/bookInput"/>
+            <Button
+                android:layout_marginTop="30dp"
+                android:id="@+id/submitBtn"
+                android:textColor="@color/white"
+                android:background="@drawable/radius"
+                android:textSize="15sp"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="북클럽 생성하기" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
