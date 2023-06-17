@@ -1,11 +1,12 @@
 package com.example.bigdipper
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bigdipper.databinding.ActivityForumBinding
 
-class Forum : AppCompatActivity() {
+class ForumActivity : AppCompatActivity() {
     lateinit var binding:ActivityForumBinding
     var writeList = arrayListOf<Write>()
     lateinit var adapter:WriteListAdapter2
@@ -22,6 +23,10 @@ class Forum : AppCompatActivity() {
 
     private fun initLayout() {
         binding.backBtn.setOnClickListener { finish() }
+        binding.writingBtn.setOnClickListener {
+            val intent = Intent(this, WritingPostActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initData() {
@@ -35,7 +40,13 @@ class Forum : AppCompatActivity() {
     private fun initRecyclerView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
         adapter = WriteListAdapter2(writeList)
-        adapter.itemClickListener = null
+        adapter.itemClickListener = object : WriteListAdapter2.OnItemClickListener {
+            override fun OnItemClick(data: Write) {
+                val intent = Intent(this@ForumActivity, PostActivity::class.java)
+                intent.putExtra("post", data)
+                startActivity(intent)
+            }
+        }
         binding.recyclerView.adapter = adapter
     }
 }
