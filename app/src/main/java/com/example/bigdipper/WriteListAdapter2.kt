@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bigdipper.databinding.WriteRowBinding
 import java.lang.Integer.min
 
+//게시판 전체보기 액티비티를 위한 어댑터
 class WriteListAdapter2(val writeList: ArrayList<Write>): RecyclerView.Adapter<WriteListAdapter2.WriteViewHolder>(){
     interface OnItemClickListener {
         fun OnItemClick(data: Write)

@@ -3,7 +3,6 @@ package com.example.bigdipper
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bigdipper.databinding.ActivityBookClubPageBinding
 import java.time.ZonedDateTime
@@ -71,7 +70,7 @@ class BookClubPage : AppCompatActivity() {
             }
 
             SeeAllWrite.setOnClickListener {
-                val intent = Intent(this@BookClubPage, Forum::class.java)
+                val intent = Intent(this@BookClubPage, ForumActivity::class.java)
                 startActivity(intent)
             }
         }
