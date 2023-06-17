@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Forum">
+    tools:context=".ForumActivity">
 
     <LinearLayout
         android:layout_gravity="top"
@@ -14,18 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical">
-
         <ImageView
             android:id="@+id/backBtn"
             android:layout_width="34dp"
             android:layout_height="34dp"
             android:src="@drawable/round_keyboard_arrow_left_24" />
-
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1" />
-
         <TextView
             android:textAlignment="textEnd"
             android:id="@+id/Header"
@@ -39,7 +36,6 @@
             android:text="게시판"
             android:textColor="@color/black_main"
             android:textSize="25sp" />
-
     </LinearLayout>
 
 
