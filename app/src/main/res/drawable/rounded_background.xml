@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/purple_200" /> <!-- 배경 색상 지정 -->
+    <corners android:radius="50dp" /> <!-- 모서리 반지름 지정 -->
+</shape>
