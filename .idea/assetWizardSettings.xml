@@ -301,7 +301,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/swipe_vertical/baseline_swipe_vertical_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/calendar_month/baseline_calendar_month_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -311,8 +311,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="212121" />
-                            <entry key="outputName" value="baseline_swipe_vertical_24" />
+                            <entry key="color" value="5757f2" />
+                            <entry key="outputName" value="baseline_calendar_month_24" />
                           </map>
                         </option>
                       </PersistentState>
