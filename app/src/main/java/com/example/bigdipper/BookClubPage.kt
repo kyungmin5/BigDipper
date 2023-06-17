@@ -1,8 +1,10 @@
 package com.example.bigdipper
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bigdipper.databinding.ActivityBookClubPageBinding
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
@@ -11,6 +13,7 @@ import java.util.*
 class BookClubPage : AppCompatActivity() {
     lateinit var binding: ActivityBookClubPageBinding
     var writeList = arrayListOf<Write>()
+    lateinit var adapter:WriteListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityBookClubPageBinding.inflate(layoutInflater)
@@ -18,13 +21,23 @@ class BookClubPage : AppCompatActivity() {
         setContentView(binding.root)
 
         initData()
-        val writeAdapter = WriteListAdapter(this, writeList)
-        binding.writeView.adapter = writeAdapter
+        initRecyclerView()
         initLayout()
     }
 
+    private fun initRecyclerView() {
+        binding.writeView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
+        adapter = WriteListAdapter(writeList)
+        adapter.itemClickListener = null
+        binding.writeView.adapter = adapter
+    }
+
     private fun initData() {
-        writeList.add(Write("뻘글", "안녕하세요", 5))
+        writeList.add(Write("뻘글6", "안녕하세요", 5))
+        writeList.add(Write("뻘글2", "안녕하세요", 4))
+        writeList.add(Write("뻘글3", "안녕하세요", 3))
+        writeList.add(Write("뻘글4", "안녕하세요", 2))
+        writeList.add(Write("뻘글5", "안녕하세요", 1))
     }
 
     private fun initLayout(){
@@ -57,6 +70,10 @@ class BookClubPage : AppCompatActivity() {
                 booksReadTogether.text = booksStringArr.joinToString("\n")
             }
 
+            SeeAllWrite.setOnClickListener {
+                val intent = Intent(this@BookClubPage, Forum::class.java)
+                startActivity(intent)
+            }
         }
     }
 

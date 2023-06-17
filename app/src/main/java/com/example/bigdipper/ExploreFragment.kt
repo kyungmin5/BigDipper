@@ -92,6 +92,11 @@ class ExploreFragment : Fragment() {
                     return true
                 }
             })
+
+            createBookClubFab.setOnClickListener {
+                val intent = Intent(activity, MakingClub::class.java)
+                startActivity(intent)
+            }
         }
 
         return binding.root
