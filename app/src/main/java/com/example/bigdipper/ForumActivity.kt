@@ -23,6 +23,10 @@ class ForumActivity : AppCompatActivity() {
 
     private fun initLayout() {
         binding.backBtn.setOnClickListener { finish() }
+        binding.writingBtn.setOnClickListener {
+            val intent = Intent(this, WritingPostActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initData() {

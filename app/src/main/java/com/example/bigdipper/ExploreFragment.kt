@@ -105,7 +105,6 @@ class ExploreFragment : Fragment() {
                     val intent = Intent(context, BookClubPage::class.java)
                     intent.putExtra("clickedData", data)
                     startActivity(intent)
-
                 }
             }
             bookClubList.adapter = adapter
