@@ -3,6 +3,7 @@ package com.example.bigdipper
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +13,12 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.bigdipper.databinding.FragmentExploreBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class ExploreFragment : Fragment() {
@@ -20,8 +26,13 @@ class ExploreFragment : Fragment() {
     lateinit var binding: FragmentExploreBinding
     private lateinit var filterViewModel: FilterViewModel
 
-    var items = dummyGenerator() // 초기 데이터
-    var filteredData = items
+    var items=dummyGenerator()
+    val itemList = mutableListOf<BookClubData>()
+
+
+    // itemList을 리사이클러뷰에 설정
+    //lateinit var items: ArrayList<BookClubData>
+    lateinit var filteredData : ArrayList<BookClubData>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -57,7 +68,35 @@ class ExploreFragment : Fragment() {
             com.google.android.material.R.color.design_default_color_primary
         )
         binding = FragmentExploreBinding.inflate(inflater, container, false)
+        val databaseReference = FirebaseDatabase.getInstance().reference
+        val clubListRef = databaseReference.child("clubs")
+        clubListRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (data in dataSnapshot.children) {
+                    val club = data.getValue(BookClubData::class.java)
+                    club?.let {
+                        itemList.add(club)
+                    }
+                }
+                items=ArrayList(itemList)
+                filteredData=items
+                init()
+            }
+            override fun onCancelled(error: DatabaseError) {
+                // 데이터베이스 조회 실패 시 처리
+            }
+        })
+
+        return binding.root
+    }
+    fun init() {
+        val primaryColor = ContextCompat.getColor(
+            requireContext(),
+            com.google.android.material.R.color.design_default_color_primary
+        )
+
         binding.apply {
+
             bookClubList.layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = BookClubAdapter(items)
@@ -84,7 +123,10 @@ class ExploreFragment : Fragment() {
                             applyFilters(primaryColor)
                         } else {
                             val queryFilteredData = filteredData.filter { item ->
-                                item.clubName.contains(newText, ignoreCase = true) || item.currentBook.contains(newText, ignoreCase = true)
+                                item.clubName.contains(
+                                    newText,
+                                    ignoreCase = true
+                                ) || item.currentBook.contains(newText, ignoreCase = true)
                             } as ArrayList<BookClubData>
                             adapter.updateData(queryFilteredData)
                         }
@@ -92,9 +134,32 @@ class ExploreFragment : Fragment() {
                     return true
                 }
             })
-        }
 
-        return binding.root
+            createBookClubFab.setOnClickListener {
+
+                // 북클럽 정보 생성
+                val club = BookClubData(
+                    clubImg = "imgstr",
+                    currentBook = "마음의 치유",
+                    clubName = "철학과 생각",
+                    tags = arrayListOf("Self-Improvement/Hobby", "Culture/Art"),
+                    ageGroup = "All ages",
+                    clubDetails = "철학 관련 책을 읽으며 토론을 주로 하는 북클럽입니다. 관심 있는 분 많이 오세요.",
+                    memberNum = "12",
+                    createdAt = "2023-06-15T16:45:00Z",
+                    totalMemberNum = "30",
+                    clubRules = "북클럽 규칙",
+                    booksHaveRead = arrayListOf("읽은 책1", "읽은 책2"),
+                    creator = "북클럽 생성자"
+                )
+
+                val database = FirebaseDatabase.getInstance()
+                val reference = database.reference.child("clubs")
+                reference.push().setValue(club)
+
+
+            }
+        }
     }
 
     // 더미 데이터 생성 함수
@@ -170,18 +235,18 @@ class ExploreFragment : Fragment() {
             "Let's discuss the impact of history on literature.",
             arrayListOf("Book H"), "북마스터")
 
-        var item6 = BookClubData("imgstr", "마음의 치유", "철학과 생각" ,
-            arrayListOf<String>("Self-Improvement/Hobby", "Culture/Art"), "All ages","철학 관련 책을 읽으며 토론을 주로 하는 북클럽입니다. 관심 있는 분 많이 오세요.", "12", "2023-06-15T16:45:00Z",
-            "30",
-            "Immerse yourself in the world of fantasy.",
-            arrayListOf("Book F", "Book G", "Book J"), "리더북웜")
+//        var item6 = BookClubData("imgstr", "마음의 치유", "철학과 생각" ,
+//            arrayListOf<String>("Self-Improvement/Hobby", "Culture/Art"), "All ages","철학 관련 책을 읽으며 토론을 주로 하는 북클럽입니다. 관심 있는 분 많이 오세요.", "12", "2023-06-15T16:45:00Z",
+//            "30",
+//            "Immerse yourself in the world of fantasy.",
+//            arrayListOf("Book F", "Book G", "Book J"), "리더북웜")
 
         dummy.add(item1)
         dummy.add(item2)
         dummy.add(item3)
         dummy.add(item4)
         dummy.add(item5)
-        dummy.add(item6)
+     //   dummy.add(item6)
 
         return dummy
     }
