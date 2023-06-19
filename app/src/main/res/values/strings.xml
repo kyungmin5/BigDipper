@@ -6,7 +6,19 @@
     <string name="no_bookclub_joined_details">북두칠성의 북클럽에서\n수많은 사람들을 만나보세요! :)</string>
     <string name="joined_bookclub_title">참여 중인 북클럽 🔥</string>
     <string name="joined_bookclub_details">000님, 독서하기 좋은 하루입니다!! 🏃🏻📖</string>
-    <!-- 북클럽 화면-->
+    <!-- 북클럽 탐색 화면-->
     <string name="explore_title">북클럽 둘러보기 📚</string>
-    <string name="explore_details">나와 같은 취향과 관심사를 가진\n북클럽에 참여해보세요! :)</string>
+    <string name="explore_details">내 취향과 관심사에 맞는 북클럽을 찾아보세요! :)</string>
+    <string name="explore_search_hint"><font size="17">북클럽 이름, 책을 검색하세요</font></string>
+    <!-- 북클럽 검색 필터 시트-->
+    <string name="filter_sheet_title">원하는 독서 모임을 찾아보세요</string>
+    <string name="age_filter_title">모집 연령대</string>
+    <string name="subject_filter_title">관심 주제 설정</string>
+    <string name="search_title">북클럽 이름 검색</string>
+    <string name="default_web_client_id2">617455865927-279f95v1gbqptdm03hamfrtj437eskm3.apps.googleusercontent.com</string>
+    <!-- 로그인 관련 메시지-->
+    <string name="success_login">구글 로그인 성공</string>
+    <string name="failed_login">구글 로그인 실패</string>
+    <string name="success_logout">로그아웃 되었습니다</string>
+    <string name="status_login">이미 로그인 되어있습니다</string>
 </resources>

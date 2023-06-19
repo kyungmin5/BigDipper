@@ -1,5 +1,6 @@
 package com.example.bigdipper
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -27,6 +28,7 @@ class WelcomeActivity : AppCompatActivity() {
         initLayout()
     }
     fun initLayout(){
+        val intent = Intent(this, GoogleLogin::class.java)
         binding.apply{
             welcomeGuideView.adapter = ViewPagerAdapter(welcomeTitleList, welcomeDescriptionList, welcomeAnimationList)
             welcomeGuideView.orientation = ViewPager2.ORIENTATION_HORIZONTAL
@@ -40,7 +42,9 @@ class WelcomeActivity : AppCompatActivity() {
                         fakeDragBy(-10f)
                     }
                     endFakeDrag()
+                    startActivity(intent)
                 }
+
             }
         }
 
