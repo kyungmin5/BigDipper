@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_shape"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="50dp"
+    tools:context=".FilterSheet">
+    <LinearLayout
+        android:paddingVertical="15dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:includeFontPadding="false"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="17sp"
+            android:textColor="@color/black_main"
+            android:layout_marginRight="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/filter_sheet_title" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_swipe_vertical_24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="4"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="15sp"
+                android:textColor="@color/black_main"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/age_filter_title" />
+            <LinearLayout
+                android:id="@+id/resetBtn"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginLeft="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/round_restart_alt_24" />
+                <TextView
+                    android:includeFontPadding="false"
+                    android:text="초기화"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_marginVertical="10dp"
+            android:id="@+id/ageFilter"
+            android:orientation="horizontal"
+            android:useDefaultMargins="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </GridLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:includeFontPadding="false"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="15sp"
+            android:textColor="@color/black_main"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/subject_filter_title" />
+        <GridLayout
+            android:layout_gravity="center"
+            android:layout_marginVertical="10dp"
+            android:id="@+id/fieldFilter"
+            android:orientation="horizontal"
+            android:useDefaultMargins="true"
+            android:rowCount="5"
+            android:columnCount="3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </GridLayout>
+    </LinearLayout>
+
+</LinearLayout>
