@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "472780980516",
+    "project_id": "myfbdb-a7d14",
+    "storage_bucket": "myfbdb-a7d14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472780980516:android:5ce7de1f3e49804203b3b1",
+        "android_client_info": {
+          "package_name": "com.example.bigdipper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "472780980516-k57vo04avg982t37984olsqeisihmjfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYYei9RFaIvhWfeb8DvaBlN88oJwJv924"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "472780980516-k57vo04avg982t37984olsqeisihmjfh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
