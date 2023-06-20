@@ -43,6 +43,7 @@ class GoogleLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGoogleLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val intent = Intent(this, MainActivity::class.java)
 
         // 파이어베이스 인증 객체 선언
         mAuth = FirebaseAuth.getInstance()
@@ -63,6 +64,7 @@ class GoogleLogin : AppCompatActivity() {
             if (gsa != null) // 로그인 되있는 경우
                 Toast.makeText(this@GoogleLogin, R.string.status_login, Toast.LENGTH_SHORT)
                     .show() else signIn()
+            startActivity(intent)
         })
 
         btnLogoutGoogle = binding.btnLogoutGoogle
@@ -116,6 +118,7 @@ class GoogleLogin : AppCompatActivity() {
 
     // [START auth_with_google]
     private fun firebaseAuthWithGoogle(idToken: String?) {
+        val intent = Intent(this, MainActivity::class.java)
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         mAuth!!.signInWithCredential(credential)
             .addOnCompleteListener(
@@ -128,6 +131,7 @@ class GoogleLogin : AppCompatActivity() {
                         .show()
                     val user = mAuth!!.currentUser
                     //                            updateUI(user);
+                    startActivity(intent)
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
