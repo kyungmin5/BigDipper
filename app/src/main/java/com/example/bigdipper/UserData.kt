@@ -6,6 +6,6 @@ data class UserData(val Uid:String, val userId:String, val userPW:String,val Nic
                     val bookClubList:ArrayList<BookClubData>, val readedList:ArrayList<String>,
                     val PostList:ArrayList<PostData>
                     ): Serializable {
-    constructor() : this("","","","","",1, arrayListOf(), arrayListOf(), arrayListOf())
+//    constructor() : this("","","","","",1, arrayListOf(), arrayListOf(), arrayListOf())
 
 }
