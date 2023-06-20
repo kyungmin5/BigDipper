@@ -37,7 +37,7 @@ class WritingPostActivity : AppCompatActivity() {
                         if (clubName == bookClubData?.clubName) {
                             // 해당 북클럽의 clubName 값과 내 문자열이 일치하는 경우에 대한 작업 수행
                             val newPost = HashMap<String, Any>()
-                            newPost["author"] = CurUserData?.NickName!!
+                            newPost["author"] = CurUserData?.nickName!!
                             newPost["content"] = content
                             newPost["likes"] = 0
                             newPost["title"] = title
