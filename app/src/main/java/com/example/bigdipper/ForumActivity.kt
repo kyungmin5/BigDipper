@@ -1,9 +1,11 @@
 package com.example.bigdipper
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.annotation.RequiresPermission
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bigdipper.databinding.ActivityForumBinding
 
@@ -17,6 +19,14 @@ class ForumActivity : AppCompatActivity() {
         binding = ActivityForumBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         bookData=intent.getSerializableExtra("bookData") as? BookClubData
+
+        val iterator = bookData?.postList?.iterator()
+        while (iterator?.hasNext() == true) {
+            val post = iterator.next()
+            if (post.title == "") {
+                iterator.remove()
+            }
+        }
         initRecyclerView()
         initLayout()
 
@@ -28,10 +38,19 @@ class ForumActivity : AppCompatActivity() {
         binding.writingBtn.setOnClickListener {
             val intent = Intent(this, WritingPostActivity::class.java)
             intent.putExtra("club", bookData)
-            startActivity(intent)
+
+            startActivityForResult(intent, 111)
         }
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 111 && resultCode == Activity.RESULT_OK) {
+            val resultData = data?.getSerializableExtra("update") as PostData?
+            bookData?.postList?.add(resultData!!)
+            adapter.notifyItemInserted(bookData?.postList?.size!!)
+        }
+    }
 
     private fun initRecyclerView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)

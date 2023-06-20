@@ -54,11 +54,13 @@ class PostActivity : AppCompatActivity() {
                             val innerRef = clubRef.child("postList")
                             innerRef.addListenerForSingleValueEvent(object : ValueEventListener {
                                 override fun onDataChange(snapshot2: DataSnapshot) {
-                                    val postListData = snapshot2.getValue(PostData::class.java)
-                                    val postTitleData = postListData?.title
+                                    for(snapshot3 in snapshot2.children) {
+                                        val postListData = snapshot3.getValue(PostData::class.java)
+                                        val postTitleData = postListData?.title
 
-                                    if (postTitleData == post?.title) {
-                                        innerRef.child("comments").setValue(commentList)
+                                        if (postTitleData == post?.title) {
+                                            innerRef.child("comments").setValue(commentList)
+                                        }
                                     }
                                 }
                                 override fun onCancelled(error: DatabaseError) {
