@@ -20,6 +20,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+        android:includeFontPadding="false"
+        android:paddingBottom="5dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:id="@+id/exploreDetails"
+        android:paddingHorizontal="30dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="북두칠성, 당신의 새로운 북클럽 📚"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/etUserId"
