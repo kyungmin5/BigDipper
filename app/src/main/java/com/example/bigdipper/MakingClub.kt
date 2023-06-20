@@ -113,11 +113,8 @@ class MakingClub : AppCompatActivity() {
                             creator = "만쥬",
                             userList = arrayListOf("만쥬"),
                             postList = arrayListOf(PostData("", "", "", 0,
-<<<<<<< HEAD
+
                                 arrayListOf( CommentData("","",0, "")), ""))
-=======
-                                arrayListOf( CommentData("","",0,"")),""))
->>>>>>> 580bb57df38b1b9a90f77c1c665c967682659954
                         )
                         val database = FirebaseDatabase.getInstance()
                         val reference = database.reference.child("clubs")
