@@ -9,7 +9,8 @@ data class BookClubData(val clubImg: String, val currentBook: String,
                         val totalMemberNum: String, val clubRules:String,
                         val booksHaveRead: ArrayList<String>, val creator: String,
                         val userList: ArrayList<String>,
-                        val postList: ArrayList<PostData>,): Serializable {
+                        val postList: ArrayList<PostData>,
+): Serializable {
     constructor() : this("", "", "", ArrayList(), "", "", "", "", "", "", ArrayList(), "",ArrayList(),
         ArrayList()
     )
