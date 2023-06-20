@@ -12,6 +12,10 @@ class WritingPostActivity : AppCompatActivity() {
 
         binding.backBtn.setOnClickListener { finish() }
 
+        binding.submitBtn.setOnClickListener {
+            //제출 버튼
+        }
+
         setContentView(binding.root)
         initbtn()
     }
