@@ -61,10 +61,12 @@ class GoogleLogin : AppCompatActivity() {
         btnGoogleLogin!!.setOnClickListener(View.OnClickListener { view: View? ->
             // 기존에 로그인 했던 계정을 확인한다.
             gsa = GoogleSignIn.getLastSignedInAccount(this@GoogleLogin)
-            if (gsa != null) // 로그인 되있는 경우
+            if (gsa != null){// 로그인 되있는 경우
                 Toast.makeText(this@GoogleLogin, R.string.status_login, Toast.LENGTH_SHORT)
-                    .show() else signIn()
-            startActivity(intent)
+                    .show()
+                startActivity(intent)
+            }
+            else signIn()
         })
 
         btnLogoutGoogle = binding.btnLogoutGoogle
