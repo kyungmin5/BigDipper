@@ -45,15 +45,5 @@
                 android:gravity="center"
 
                 android:text="계 속 하 기" />
-            <Button
-                android:id="@+id/loginBtn"
-                android:textColor="@color/white"
-                android:background="@drawable/radius"
-                android:textSize="15sp"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="로그인"
-            />
         </LinearLayout>
 </LinearLayout>
