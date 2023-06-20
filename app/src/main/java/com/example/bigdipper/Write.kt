@@ -1,4 +1,4 @@
 package com.example.bigdipper
 
-class Write (val title:String, val content:String, val boomUp:Int) :java.io.Serializable {
+class Write (var title:String, var content:String, var date:String, var boomUp:Int) :java.io.Serializable {
 }

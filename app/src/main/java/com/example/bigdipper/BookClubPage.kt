@@ -32,15 +32,15 @@ class BookClubPage : AppCompatActivity() {
     }
 
     private fun initData() {
-        writeList.add(Write("뻘글6", "안녕하세요", 5))
-        writeList.add(Write("뻘글2", "안녕하세요", 4))
-        writeList.add(Write("뻘글3", "안녕하세요", 3))
-        writeList.add(Write("뻘글4", "안녕하세요", 2))
-        writeList.add(Write("뻘글5", "안녕하세요", 1))
+        writeList.add(Write("뻘글6", "안녕하세요", "06/18 01:43",5))
+        writeList.add(Write("뻘글2", "안녕하세요", "06/18 01:43",4))
+        writeList.add(Write("뻘글3", "안녕하세요", "06/18 01:43",3))
+        writeList.add(Write("뻘글4", "안녕하세요", "06/18 01:43",2))
+        writeList.add(Write("뻘글5", "안녕하세요", "06/18 01:43",1))
     }
 
     private fun initLayout(){
-        val bookData = intent.getSerializableExtra("clickedData") as? BookClubData
+        val bookData = intent.getSerializableExtra("data") as? BookClubData
         binding.apply {
             backBtn.setOnClickListener {
                 finish()
