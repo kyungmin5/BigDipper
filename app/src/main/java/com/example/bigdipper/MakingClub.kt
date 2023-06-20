@@ -47,6 +47,11 @@ class MakingClub : AppCompatActivity() {
                 var memberNum = "1"
                 var totalMemberNum = personnel.text.toString()
                 var clubRules = rule.text.toString()
+                var theme=binding.spinner1.selectedItem as String
+                var theme2:String= binding.spinner2.selectedItem as String
+                var themeArray: ArrayList<String> = ArrayList()
+                themeArray.add(theme)
+                themeArray.add(theme2)
                 var creator = "북클럽 생성자"
                 Log.i("ddd",currentBook)
                 if(currentBook==""){
