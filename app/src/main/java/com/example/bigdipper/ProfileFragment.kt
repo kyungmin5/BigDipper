@@ -38,7 +38,17 @@ class ProfileFragment : Fragment() {
             Log.i("asdasd",CurUserData.toString())
             handle.text=CurUserData!!.NickName
             intro.text=CurUserData!!.explain
-
+            when(CurUserData?.lv) {
+                in 0..100 -> {
+                    starImage.setAnimation(R.raw.starlevel1)
+                }
+                in 101.. 200 -> {
+                    starImage.setAnimation(R.raw.starlevel2)
+                }
+                else -> {
+                    starImage.setAnimation(R.raw.starlevel3)
+                }
+            }
         }
     }
     override fun onDestroyView() {

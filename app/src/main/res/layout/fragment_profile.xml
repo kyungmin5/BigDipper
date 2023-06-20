@@ -153,7 +153,7 @@
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_marginTop="-20dp"
                 android:id="@+id/starImage"
-                app:lottie_rawRes="@raw/star"
+                app:lottie_rawRes="@raw/starlevel3"
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
                 app:lottie_autoPlay="true"

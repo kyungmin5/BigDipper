@@ -147,6 +147,8 @@ class BookClubPage : AppCompatActivity() {
                             }
                         })
                         userRef.child("lv").setValue(oldValue + 200)
+                        CurUserData!!.lv += 200
+                        userManager.setUserData(CurUserData!!)
                     }
                 }
                 .setNegativeButton("취소") { dialog: DialogInterface, which: Int ->
