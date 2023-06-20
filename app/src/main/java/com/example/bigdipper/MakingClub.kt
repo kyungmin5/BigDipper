@@ -107,7 +107,7 @@ class MakingClub : AppCompatActivity() {
                             clubDetails = clubDetails,
                             memberNum = "1",
                             createdAt = time!!,
-                            totalMemberNum = personnel.text.toString(),
+                            totalMemberNum = personnelInput.text.toString(),
                             clubRules = rule.text.toString(),
                             booksHaveRead = arrayListOf(),
                             creator = "만쥬",
