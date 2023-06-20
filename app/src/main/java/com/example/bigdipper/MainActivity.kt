@@ -9,13 +9,24 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager2.widget.ViewPager2
 import com.example.bigdipper.databinding.ActivityMainBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
     val userManager = UserDataManager.getInstance() // 싱글톤 객체 가져오기
 
     // 유저 데이터 설정
-    val userData = UserData("uid123", "강대훈", "자고싶다", 1, ArrayList(), ArrayList(), ArrayList())
+    val userData = UserData("uid123", "강대훈", "자고싶다", 1, arrayListOf(), arrayListOf(), arrayListOf())
+    val uid = "uid123"
+
+    val databaseReference = FirebaseDatabase.getInstance().reference.child("users")
+    val userQuery = databaseReference.orderByChild("Uid").equalTo(uid)
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -23,6 +34,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initLayout()
         userManager.setUserData(userData)
+        init()
+    }
+
+    private fun init(){
+        userQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                } else {
+                    // 동일한 UID가 없는 경우 새로운 사용자를 생성하고 데이터를 추가합니다.
+                    databaseReference.child(uid).setValue(userData)
+                        .addOnSuccessListener {
+                            // 데이터 추가 성공
+                        }
+                        .addOnFailureListener { error ->
+                            // 데이터 추가 실패
+                        }
+                }
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+                // 쿼리 취소 또는 오류 처리
+            }
+        })
     }
 
     private fun initLayout(){
