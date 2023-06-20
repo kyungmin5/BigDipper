@@ -10,6 +10,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.ktx.Firebase
 
 class PostActivity : AppCompatActivity() {
     lateinit var binding:ActivityPostBinding
@@ -50,7 +51,20 @@ class PostActivity : AppCompatActivity() {
                         if (clubName == club?.clubName) {
                             // 해당 북클럽의 clubName 값과 내 문자열이 일치하는 경우에 대한 작업 수행
                             val clubRef = snapshot.ref
-                            clubRef.child("postList/comments").push().setValue(newComment)
+                            val innerRef = clubRef.child("postList")
+                            innerRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                                override fun onDataChange(snapshot2: DataSnapshot) {
+                                    val postListData = snapshot2.getValue(PostData::class.java)
+                                    val postTitleData = postListData?.title
+
+                                    if (postTitleData == post?.title) {
+                                        innerRef.child("comments").setValue(commentList)
+                                    }
+                                }
+                                override fun onCancelled(error: DatabaseError) {
+                                    Toast.makeText(this@PostActivity, "DB 오류", Toast.LENGTH_SHORT).show()
+                                }
+                            })
                             break
                         }
                     }

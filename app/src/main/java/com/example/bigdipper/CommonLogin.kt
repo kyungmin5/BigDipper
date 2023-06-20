@@ -18,6 +18,7 @@ class CommonLogin : AppCompatActivity() {
     lateinit var binding: ActivityCommonLoginBinding
 
     private var btnLogin: Button? = null
+    private var btnCreateAccount: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,7 @@ class CommonLogin : AppCompatActivity() {
     }
     private fun initLayout() {
         val intent = Intent(this, MainActivity::class.java)
-        val intent2 = Intent(this, GoogleLogin::class.java)
+        val intent2 = Intent(this, CreateAccount::class.java)
         btnLogin = binding.btnSignUp
 
         btnLogin?.setOnClickListener { view: View? ->
@@ -51,27 +52,27 @@ class CommonLogin : AppCompatActivity() {
                                     // 로그인 성공
                                     userManager.setUserData(user)
                                     Toast.makeText(this@CommonLogin, "로그인 성공", Toast.LENGTH_SHORT).show()
-
                                     startActivity(intent)
                                     return
                                 }
                             }
-                            Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다", Toast.LENGTH_SHORT).show()
-                            startActivity(intent2)
+                            Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다.", Toast.LENGTH_SHORT).show()
                         } else {
-                            Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다", Toast.LENGTH_SHORT).show()
-                            startActivity(intent2)
+                            Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다.", Toast.LENGTH_SHORT).show()
                         }
                     }
 
                     override fun onCancelled(databaseError: DatabaseError) {
                         // 쿼리 취소 또는 오류 처리
-                        Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다", Toast.LENGTH_SHORT).show()
-                        startActivity(intent2)
+                        Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다.", Toast.LENGTH_SHORT).show()
                     }
                 })
             }
         }
+        btnCreateAccount = binding.createAccount
+        btnCreateAccount!!.setOnClickListener(View.OnClickListener { view: View? ->
+            startActivity(intent2)
+        })
     }
 
 }

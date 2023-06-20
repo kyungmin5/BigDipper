@@ -57,7 +57,7 @@ class BookClubPage : AppCompatActivity() {
 
                 // 북클럽 정보 (개설일, 멤버 명수와 정원, 선호 연령대)
                 createdAt.text = ISOStringToDateInKorean(bookData!!.createdAt)
-                members.text = bookData?.memberNum + " / " + bookData?.totalMemberNum
+                members.text = bookData?.memberNum + " / " + bookData?.totalMemberNum + "명"
                 preferedAge.text = ageFilterInKorean(bookData!!.ageGroup)
 
                 // 클럽 규칙
