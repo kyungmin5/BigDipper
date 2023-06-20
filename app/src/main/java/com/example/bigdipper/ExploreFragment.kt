@@ -26,7 +26,8 @@ class ExploreFragment : Fragment() {
     lateinit var adapter: BookClubAdapter
     lateinit var binding: FragmentExploreBinding
     private lateinit var filterViewModel: FilterViewModel
-
+    val userManager = UserDataManager.getInstance()
+    val CurUserData = userManager.getUserData()
     lateinit var items:ArrayList<BookClubData>
     val itemList = mutableListOf<BookClubData>()
 
