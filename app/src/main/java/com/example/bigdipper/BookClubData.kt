@@ -22,7 +22,7 @@ data class PostData(
     val likes: Int,
     val comments: ArrayList<CommentData>
 
-){
+): Serializable{
     constructor() : this("", "", "", 0, arrayListOf())
 }
 
@@ -30,6 +30,6 @@ data class CommentData(
     val author: String,
     val content: String,
     val likes: Int
-){
+): Serializable{
     constructor() : this("", "", 0)
 }
