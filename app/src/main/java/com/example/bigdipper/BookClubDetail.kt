@@ -60,8 +60,13 @@ class BookClubDetail : AppCompatActivity() {
                         override fun onDataChange(dataSnapshot: DataSnapshot) {
                             for (data in dataSnapshot.children) {
                                 var bookClub = data.getValue(BookClubData::class.java)
-                                bookClub!!.memberNum+=1
-                                bookClub?.userList?.add(userNickname)
+                                if(bookClub?.clubName==bookData?.clubName) {
+                                    var intNum = bookClub!!.memberNum!!.toInt()
+                                    intNum=intNum+1
+                                    bookClub.memberNum=intNum.toString()
+                                    bookClub?.userList?.add(userNickname)
+                                    data.ref.setValue(bookClub)
+                                }
                             }
                         }
                         override fun onCancelled(databaseError: DatabaseError) {
