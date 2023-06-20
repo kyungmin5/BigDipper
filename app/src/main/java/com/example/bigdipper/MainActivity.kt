@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     // 유저 데이터 설정
     val userData = UserData("uid123", "강대훈", "자고싶다", 1, ArrayList(), ArrayList(), ArrayList())
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
