@@ -39,6 +39,7 @@ class GoogleLogin : AppCompatActivity() {
     private var btnGoogleLogin: SignInButton? = null
     private var btnLogoutGoogle: Button? = null
     private var btnNew: Button? = null
+    private var btnCommonLogin: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +47,7 @@ class GoogleLogin : AppCompatActivity() {
         setContentView(binding.root)
         val intent = Intent(this, MainActivity::class.java)
         val intent2 = Intent(this, CreateAccount::class.java)
+        val intent3 = Intent(this, CommonLogin::class.java)
 
         // 파이어베이스 인증 객체 선언
         mAuth = FirebaseAuth.getInstance()
@@ -79,6 +81,11 @@ class GoogleLogin : AppCompatActivity() {
         btnNew = binding.createAccount
         btnNew!!.setOnClickListener(View.OnClickListener { view: View? ->
             startActivity(intent2)
+        })
+
+        btnCommonLogin = binding.btnLogin
+        btnCommonLogin!!.setOnClickListener(View.OnClickListener { view: View? ->
+            startActivity(intent3)
         })
 
     }

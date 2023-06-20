@@ -13,7 +13,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </com.google.android.gms.common.SignInButton>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="112dp"
+        android:layout_height="56dp"
+        android:text="일반 로그인"
+        app:layout_constraintBottom_toTopOf="@+id/btn_google_sign_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_account" />
 
     <Button
         android:id="@+id/btn_logout_google"
@@ -29,11 +41,13 @@
 
     <Button
         android:id="@+id/create_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="112dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="88dp"
         android:text="회원 가입"
         app:layout_constraintBottom_toTopOf="@+id/btn_google_sign_in"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
