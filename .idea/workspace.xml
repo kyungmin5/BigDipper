@@ -9,13 +9,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f4162a-23f1-4fc6-97b4-1752cb4d2717" name="Changes" comment="북클럽 필터 구현 완료&#10;북클럽 검색창 구현 완료&#10;북클럽 상세페이지 구현 완료" />
+    <list default="true" id="c3f4162a-23f1-4fc6-97b4-1752cb4d2717" name="Changes" comment="Login Service" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\user\.android\avd\Pixel_2_API_33.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\kwak4\.android\avd\Pixel_2_API_33.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -25,6 +25,9 @@
     <system id="GRADLE">
       <state>
         <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
           <activation />
         </task>
         <projects_view>
@@ -99,26 +102,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "android-custom-view/Users/gyurikim/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED": "RecyclerView",
-    "cidr.known.project.marker": "true",
-    "last_directory_selection": "/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/drawable-v24",
-<<<<<<< HEAD
-    "last_opened_file_path": "C:/Users/user/AndroidStudioProjects/ALIVE/ALIVE_FRONT",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2068528"
-=======
-    "last_opened_file_path": "/Users/minboy/AndroidStudioProjects/BigDipper",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.0"
-=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -128,11 +111,31 @@
     &quot;android-custom-view/Users/gyurikim/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED&quot;: &quot;RecyclerView&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/drawable-v24&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/raw&quot;
->>>>>>> 0d10d5a3418389fc2e668dc746eb2cd157336fae
->>>>>>> fe7830725bc13f6f0ad8fb6ed82c239093de84ca
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/AndroidStudioProjects/ALIVE/ALIVE_FRONT&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2068528&quot;
+=======
+    &quot;last_opened_file_path&quot;: &quot;/Users/minboy/AndroidStudioProjects/BigDipper&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+=======
+  &lt;component name=&quot;PropertiesComponent&quot;&gt;{
+  &amp;quot;keyToString&amp;quot;: {
+    &amp;quot;RunOnceActivity.OpenProjectViewOnStart&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;RunOnceActivity.ShowReadmeOnStart&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;RunOnceActivity.cidr.known.project.marker&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;SHARE_PROJECT_CONFIGURATION_FILES&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;android-custom-view/Users/gyurikim/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED&amp;quot;: &amp;quot;RecyclerView&amp;quot;,
+    &amp;quot;cidr.known.project.marker&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;last_directory_selection&amp;quot;: &amp;quot;/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/drawable-v24&amp;quot;,
+    &amp;quot;last_opened_file_path&amp;quot;: &amp;quot;/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/raw&amp;quot;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 0d10d5a3418389fc2e668dc746eb2cd157336fae
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; fe7830725bc13f6f0ad8fb6ed82c239093de84ca
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="android.template.1502556890">
       <recent name="com.example.bigdipper" />
@@ -164,7 +167,7 @@
       <recent name="com.example.bigdipper" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="BigDipper.app.main" />
       <option name="DEPLOY" value="true" />
