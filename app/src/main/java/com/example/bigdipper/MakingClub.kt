@@ -37,43 +37,78 @@ class MakingClub : AppCompatActivity() {
 
     private fun init(){
         binding.apply {
-            Log.i("ddddddd","qqqqqqqqqqqqq")
-            submitBtn.setOnClickListener {
-                val selectedRadioButtonId = binding.ageGroup.checkedRadioButtonId
-                val selectedRadioButton: RadioButton = binding.ageGroup.findViewById(selectedRadioButtonId)
-                var age=ageGroup.checkedRadioButtonId
-                Log.i("ddddddd",age.toString())
 
-                var targetAge:String?=null
-                if(selectedRadioButton==adult){
-                    targetAge="Adult"
+            submitBtn.setOnClickListener {
+                var clubImg="imgstr"
+                var currentBook = bookInput.text.toString()
+                var clubName = clubNameInput.text.toString()
+                var tags = arrayListOf("Self-Improvement/Hobby", "Culture/Art")
+                var clubDetails =introInput.text.toString()
+                var memberNum = "1"
+                var totalMemberNum = personnel.text.toString()
+                var clubRules = rule.text.toString()
+                var creator = "북클럽 생성자"
+                Log.i("ddd",currentBook)
+                if(currentBook==""){
+                    Toast.makeText(this@MakingClub,"읽을책 작성해주세요",Toast.LENGTH_SHORT).show()
                 }
-                else if(selectedRadioButton==teen){
-                    targetAge="Adolescent"
+                else if(clubName.isEmpty()){
+                    Toast.makeText(this@MakingClub,"북클럽 이름좀",Toast.LENGTH_SHORT).show()
+
                 }
-                else if(selectedRadioButton==dontCare){
-                    targetAge="All ages"
+                else if(clubDetails.isEmpty()){
+                    Toast.makeText(this@MakingClub,"북클럽 설명좀",Toast.LENGTH_SHORT).show()
                 }
-                setTime()
-                val club = BookClubData(
-                    clubImg = "imgstr",
-                    currentBook = bookInput.text.toString(),
-                    clubName = clubNameInput.text.toString(),
-                    tags = arrayListOf("Self-Improvement/Hobby", "Culture/Art"),
-                    ageGroup = targetAge!!,
-                    clubDetails =introInput.text.toString(),
-                    memberNum = "1",
-                    createdAt = time!!,
-                    totalMemberNum = personnel.text.toString(),
-                    clubRules = rule.text.toString(),
-                    booksHaveRead = arrayListOf(),
-                    creator = "북클럽 생성자"
-                )
-                val database = FirebaseDatabase.getInstance()
-                val reference = database.reference.child("clubs")
-                reference.push().setValue(club)
-                Log.i("ddddddd",time.toString())
-                Toast.makeText(this@MakingClub,"asd",Toast.LENGTH_SHORT).show()
+                else if(totalMemberNum.isEmpty()){
+                    Toast.makeText(this@MakingClub,"북클럽 총 인원좀",Toast.LENGTH_SHORT).show()
+
+                }
+                else if(clubRules.isEmpty()){
+                    Toast.makeText(this@MakingClub,"북클럽규칙좀",Toast.LENGTH_SHORT).show()
+
+                }
+                else {
+
+                    val selectedRadioButtonId = binding.ageGroup.checkedRadioButtonId
+                    if (selectedRadioButtonId == -1) {
+                        Toast.makeText(this@MakingClub, "선호 연령대를 선택해주세요", Toast.LENGTH_SHORT).show()
+                    } else{
+                    val selectedRadioButton: RadioButton =
+                        binding.ageGroup.findViewById(selectedRadioButtonId)
+                    var targetAge: String? = null
+                    if (selectedRadioButton == adult) {
+                        targetAge = "Adult"
+                    } else if (selectedRadioButton == teen) {
+                        targetAge = "Adolescent"
+                    } else if (selectedRadioButton == dontCare) {
+                        targetAge = "All ages"
+                    }
+                        setTime()
+                        val club = BookClubData(
+                            clubImg = clubImg,
+                            currentBook = currentBook,
+                            clubName = clubName,
+                            tags = tags,
+                            ageGroup = targetAge!!,
+                            clubDetails = clubDetails,
+                            memberNum = "1",
+                            createdAt = time!!,
+                            totalMemberNum = personnel.text.toString(),
+                            clubRules = rule.text.toString(),
+                            booksHaveRead = arrayListOf(),
+                            creator = "만쥬",
+                            userList = arrayListOf("만쥬"),
+                            postList = arrayListOf(PostData("", "", "", 0,
+                                arrayListOf( CommentData("","",0))))
+                        )
+                        val database = FirebaseDatabase.getInstance()
+                        val reference = database.reference.child("clubs")
+                        reference.push().setValue(club)
+                        finish()
+                    }
+                }
+
+
             }
         }
     }

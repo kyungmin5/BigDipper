@@ -17,5 +17,13 @@ class WritingPostActivity : AppCompatActivity() {
         }
 
         setContentView(binding.root)
+        initbtn()
     }
+
+    fun initbtn(){
+        binding.submitBtn.setOnClickListener{
+
+        }
+    }
+
 }
