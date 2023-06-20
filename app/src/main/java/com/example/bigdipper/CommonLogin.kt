@@ -51,21 +51,22 @@ class CommonLogin : AppCompatActivity() {
                                     // 로그인 성공
                                     userManager.setUserData(user)
                                     Toast.makeText(this@CommonLogin, "로그인 성공", Toast.LENGTH_SHORT).show()
+
                                     startActivity(intent)
                                     return
                                 }
                             }
-                            Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다1.", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다", Toast.LENGTH_SHORT).show()
                             startActivity(intent2)
                         } else {
-                            Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다2.", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다", Toast.LENGTH_SHORT).show()
                             startActivity(intent2)
                         }
                     }
 
                     override fun onCancelled(databaseError: DatabaseError) {
                         // 쿼리 취소 또는 오류 처리
-                        Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다3.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@CommonLogin, "사용자 정보가 없습니다", Toast.LENGTH_SHORT).show()
                         startActivity(intent2)
                     }
                 })

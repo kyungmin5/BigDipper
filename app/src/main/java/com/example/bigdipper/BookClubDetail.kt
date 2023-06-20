@@ -17,7 +17,7 @@ import java.util.*
 class BookClubDetail : AppCompatActivity() {
     lateinit var binding: ActivityBookClubDetailBinding
     val userManager = UserDataManager.getInstance()
-    val CurUserData = userManager.getUserData()
+    private val CurUserData = userManager.getUserData()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBookClubDetailBinding.inflate(layoutInflater)
@@ -43,12 +43,14 @@ class BookClubDetail : AppCompatActivity() {
 
                         for (data in dataSnapshot.children) {
                             var user = data.getValue(UserData::class.java)
-                            if (user?.bookClubList == null) {
-                                user?.bookClubList = ArrayList() // 새로운 ArrayList로 초기화
-                            }
-                            user?.bookClubList?.add(bookData!!)
+                            if (user!!.NickName == userNickname) {
+                                if (user?.bookClubList == null) {
+                                    user?.bookClubList = ArrayList() // 새로운 ArrayList로 초기화
+                                }
+                                user?.bookClubList?.add(bookData!!)
                             }
                         }
+                    }
                     override fun onCancelled(databaseError: DatabaseError) {
                         // 쿼리 취소 또는 오류 처리
                     }
@@ -56,7 +58,6 @@ class BookClubDetail : AppCompatActivity() {
                 val databaseReference1 = FirebaseDatabase.getInstance().reference.child("clubs")
                     databaseReference1.addListenerForSingleValueEvent(object : ValueEventListener {
                         override fun onDataChange(dataSnapshot: DataSnapshot) {
-
                             for (data in dataSnapshot.children) {
                                 var bookClub = data.getValue(BookClubData::class.java)
                                 bookClub!!.memberNum+=1

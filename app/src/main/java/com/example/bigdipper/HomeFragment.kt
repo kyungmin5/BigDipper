@@ -32,13 +32,14 @@ class HomeFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val bookClubList = CurUserData!!.bookClubList!!
-        val iterator = bookClubList.iterator()
-
-        while (iterator.hasNext()) {
-            val bookClubData = iterator.next()
-            if (bookClubData.clubName == "dummy") {
-                iterator.remove()
+        val bookClubList = CurUserData?.bookClubList
+        val iterator = bookClubList?.iterator()
+        if(bookClubList!=null) {
+            while (iterator!!.hasNext()) {
+                val bookClubData = iterator.next()
+                if (bookClubData.clubName == "dummy") {
+                    iterator.remove()
+                }
             }
         }
         if (!CurUserData?.bookClubList.isNullOrEmpty()) {
