@@ -9,11 +9,14 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
+@Suppress("DEPRECATION")
 class BookClubPage : AppCompatActivity() {
     lateinit var binding: ActivityBookClubPageBinding
     //var writeList = arrayListOf<Write>()
     lateinit var adapter:WriteListAdapter
-    val bookData = intent.getSerializableExtra("clickedData") as? BookClubData
+
+
+    private val bookData = intent.getSerializableExtra("clickedData") as? BookClubData
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityBookClubPageBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
