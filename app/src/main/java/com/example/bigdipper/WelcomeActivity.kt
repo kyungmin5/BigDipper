@@ -29,6 +29,7 @@ class WelcomeActivity : AppCompatActivity() {
     }
     fun initLayout(){
         val intent = Intent(this, GoogleLogin::class.java)
+        var countClick = 0
         binding.apply{
             welcomeGuideView.adapter = ViewPagerAdapter(welcomeTitleList, welcomeDescriptionList, welcomeAnimationList)
             welcomeGuideView.orientation = ViewPager2.ORIENTATION_HORIZONTAL
@@ -41,8 +42,11 @@ class WelcomeActivity : AppCompatActivity() {
                         fakeDragBy(-10f)
                         fakeDragBy(-10f)
                     }
+                    countClick++
                     endFakeDrag()
-                    startActivity(intent)
+                    if(countClick==3) {
+                        startActivity(intent)
+                    }
                 }
 
             }
