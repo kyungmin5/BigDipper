@@ -16,4 +16,9 @@
     <string name="subject_filter_title">관심 주제 설정</string>
     <string name="search_title">북클럽 이름 검색</string>
     <string name="default_web_client_id2">617455865927-279f95v1gbqptdm03hamfrtj437eskm3.apps.googleusercontent.com</string>
+    <!-- 로그인 관련 메시지-->
+    <string name="success_login">구글 로그인 성공</string>
+    <string name="failed_login">구글 로그인 실패</string>
+    <string name="success_logout">로그아웃 되었습니다</string>
+    <string name="status_login">이미 로그인 되어있습니다</string>
 </resources>
