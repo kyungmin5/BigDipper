@@ -1,5 +1,6 @@
 package com.example.bigdipper
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +8,10 @@ import android.widget.RadioButton
 import android.widget.Toast
 import com.example.bigdipper.databinding.ActivityMakingClubBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -32,9 +36,7 @@ class MakingClub : AppCompatActivity() {
         val currentDateTime = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'")
         time = currentDateTime.format(formatter)
-//        val currentDateTime = LocalDateTime.now()
-//        val formatter = DateTimeFormatter.ISO_DATE_TIME
-//        time = currentDateTime.format(formatter)
+
 
     }
 
@@ -61,7 +63,6 @@ class MakingClub : AppCompatActivity() {
                 }
 
                 var creator = "북클럽 생성자"
-                Log.i("ddd",currentBook)
                 if(currentBook==""){
                     Toast.makeText(this@MakingClub,"읽을책 작성해주세요",Toast.LENGTH_SHORT).show()
                 }
@@ -113,7 +114,7 @@ class MakingClub : AppCompatActivity() {
                             totalMemberNum = personnelInput.text.toString(),
                             clubRules = rule.text.toString(),
                             booksHaveRead = arrayListOf(),
-                            creator = CurUserData!!.NickName,
+                            creator = CurUserData!!.nickName,
                             userList = arrayListOf(creator),
                             postList = arrayListOf(PostData("", "", "", 0,
 
@@ -122,7 +123,35 @@ class MakingClub : AppCompatActivity() {
                         val database = FirebaseDatabase.getInstance()
                         val reference = database.reference.child("clubs")
                         reference.push().setValue(club)
-                        finish()
+
+                        val databaseReference = FirebaseDatabase.getInstance().reference.child("users")
+                        val userNickname = CurUserData.nickName // 대조할 사용자의 닉네임
+                        Log.i("my",userNickname)
+
+                        databaseReference.addListenerForSingleValueEvent(object :
+                            ValueEventListener {
+                            override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                                for (data in dataSnapshot.children) {
+                                    var user = data.getValue(UserData::class.java)
+                                    Log.i("asd",user?.nickName.toString())
+                                    if (user?.nickName == userNickname) {
+
+                                        if (user?.bookClubList == null) {
+                                            user?.bookClubList =
+                                                java.util.ArrayList() // 새로운 ArrayList로 초기화
+                                        }
+                                        user?.bookClubList?.add(club!!)
+                                    }
+                                }
+                            }
+                            override fun onCancelled(databaseError: DatabaseError) {
+                                // 쿼리 취소 또는 오류 처리
+                            }
+                        })
+                        val intent = Intent(this@MakingClub, MainActivity::class.java)
+
+                        startActivity(intent)
                     }
                 }
 
