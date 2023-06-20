@@ -1,5 +1,6 @@
 package com.example.bigdipper
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -25,7 +26,8 @@ class ExploreFragment : Fragment() {
     lateinit var adapter: BookClubAdapter
     lateinit var binding: FragmentExploreBinding
     private lateinit var filterViewModel: FilterViewModel
-
+    val userManager = UserDataManager.getInstance()
+    val CurUserData = userManager.getUserData()
     lateinit var items:ArrayList<BookClubData>
     val itemList = mutableListOf<BookClubData>()
 
@@ -33,6 +35,7 @@ class ExploreFragment : Fragment() {
     // itemList을 리사이클러뷰에 설정
     //lateinit var items: ArrayList<BookClubData>
     lateinit var filteredData : ArrayList<BookClubData>
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -50,10 +53,7 @@ class ExploreFragment : Fragment() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-    }
     override fun onResume() {
         super.onResume()
         binding.search.clearFocus()
