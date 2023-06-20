@@ -16,13 +16,13 @@ import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
-    val userManager = UserDataManager.getInstance() // 싱글톤 객체 가져오기
-
-    // 유저 데이터 설정
-    val userData = UserData("uid123","eogns47","kukuku", "강대훈", "자고싶다", 1, arrayListOf(), arrayListOf(), arrayListOf())
-    val uid = userData.Uid
-    val databaseReference = FirebaseDatabase.getInstance().reference.child("users")
-    val userQuery = databaseReference.orderByChild("Uid").equalTo(uid)
+//    val userManager = UserDataManager.getInstance() // 싱글톤 객체 가져오기
+//
+//    // 유저 데이터 설정
+//    val userData = UserData("uid123","eogns47","kukuku", "강대훈", "자고싶다", 1, arrayListOf(), arrayListOf(), arrayListOf())
+//    val uid = userData.Uid
+//    val databaseReference = FirebaseDatabase.getInstance().reference.child("users")
+//    val userQuery = databaseReference.orderByChild("Uid").equalTo(uid)
 
 
 
@@ -36,25 +36,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init(){
-        userManager.setUserData(userData)
-        userQuery.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.exists()) {
-                } else {
-                    // 동일한 UID가 없는 경우 새로운 사용자를 생성하고 데이터를 추가합니다.
-                    databaseReference.child(uid).setValue(userData)
-                        .addOnSuccessListener {
-                            // 데이터 추가 성공
-                        }
-                        .addOnFailureListener { error ->
-                            // 데이터 추가 실패
-                        }
-                }
-            }
-            override fun onCancelled(databaseError: DatabaseError) {
-                // 쿼리 취소 또는 오류 처리
-            }
-        })
+
     }
 
     private fun initLayout(){
