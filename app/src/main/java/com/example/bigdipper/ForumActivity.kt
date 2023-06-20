@@ -26,6 +26,7 @@ class ForumActivity : AppCompatActivity() {
         binding.backBtn.setOnClickListener { finish() }
         binding.writingBtn.setOnClickListener {
             val intent = Intent(this, WritingPostActivity::class.java)
+            intent.putExtra("club", bookData)
             startActivity(intent)
         }
     }
@@ -38,6 +39,7 @@ class ForumActivity : AppCompatActivity() {
             override fun OnItemClick(data: PostData) {
                 val intent = Intent(this@ForumActivity, PostActivity::class.java)
                 intent.putExtra("post", data)
+                intent.putExtra("club", bookData)
                 startActivity(intent)
             }
         }

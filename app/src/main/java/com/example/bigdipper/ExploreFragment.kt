@@ -70,7 +70,7 @@ class ExploreFragment : Fragment() {
 
         }
         else {
-            for (bookClubData in CurUserData!!.bookClubList) {
+            for (bookClubData in CurUserData.bookClubList!!) {
                 val bookClubName = bookClubData.clubName // 북클럽의 이름 추출
                 bookClubNames.add(bookClubName) // 리스트에 북클럽 이름 추가
             }
