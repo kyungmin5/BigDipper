@@ -10,7 +10,9 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3">
+            android:layout_weight="3"
+            android:layout_gravity="center"
+            >
             <me.relex.circleindicator.CircleIndicator3
                 android:layout_marginTop="20dp"
                 android:id="@+id/welcomePageIndicator"
@@ -30,7 +32,9 @@
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="0dp">
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            >
             <Button
                 android:id="@+id/welcomeContinueBtn"
                 android:textColor="@color/white"
@@ -39,7 +43,17 @@
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_gravity="center_vertical"
+
                 android:text="계 속 하 기" />
+            <Button
+                android:id="@+id/loginBtn"
+                android:textColor="@color/white"
+                android:background="@drawable/radius"
+                android:textSize="15sp"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="로그인"
+            />
         </LinearLayout>
 </LinearLayout>

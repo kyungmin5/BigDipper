@@ -9,15 +9,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f4162a-23f1-4fc6-97b4-1752cb4d2717" name="Changes" comment="Login Service">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c3f4162a-23f1-4fc6-97b4-1752cb4d2717" name="Changes" comment="북클럽 필터 구현 완료&#10;북클럽 검색창 구현 완료&#10;북클럽 상세페이지 구현 완료" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\kwak4\.android\avd\Pixel_2_API_33.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\user\.android\avd\Pixel_2_API_33.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -101,45 +99,72 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "android-custom-view/Users/gyurikim/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED": "RecyclerView",
+    "cidr.known.project.marker": "true",
+    "last_directory_selection": "/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/drawable-v24",
+<<<<<<< HEAD
+    "last_opened_file_path": "C:/Users/user/AndroidStudioProjects/ALIVE/ALIVE_FRONT",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2068528"
+=======
+    "last_opened_file_path": "/Users/minboy/AndroidStudioProjects/BigDipper",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.0"
+=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;android-custom-view/Users/gyurikim/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED&quot;: &quot;RecyclerView&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/drawable-v24&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kwak4/AndroidStudioProjects/BigDipper&quot;
+    &quot;last_opened_file_path&quot;: &quot;/Users/gyurikim/AndroidStudioProjects/BigDipper/app/src/main/res/raw&quot;
+>>>>>>> 0d10d5a3418389fc2e668dc746eb2cd157336fae
+>>>>>>> fe7830725bc13f6f0ad8fb6ed82c239093de84ca
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="android.template.1502556890">
+      <recent name="com.example.bigdipper" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kwak4\AndroidStudioProjects\BigDipper\app" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/raw" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
       <recent name="$PROJECT_DIR$/app/src/main/res/raw" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/font" />
+    </key>
+    <key name="android.template.420792645">
+      <recent name="com.example.bigdipper" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\AndroidStudioProjects\BigDipper\app" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/res/raw" />
     </key>
     <key name="android.template.557429147">
       <recent name="com.example.bigdipper" />
     </key>
-    <key name="android.template.1424176435">
-      <recent name="com.example.bigdipper" />
-    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.example.bigdipper" />
     </key>
+    <key name="android.template.-2139652180">
+      <recent name="com.example.bigdipper" />
+    </key>
   </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="gradle signingReport" />
-    </option>
-  </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="BigDipper.app.main" />
       <option name="DEPLOY" value="true" />
@@ -263,35 +288,56 @@
       <option name="project" value="LOCAL" />
       <updated>1685905679220</updated>
     </task>
-    <task id="LOCAL-00002" summary="로그인 서비스 아직 수정중&#10;필요 문서 수정&#10;pull하기 위해서 commit&#10;api 및 서비스 키 설정">
-      <created>1687148617912</created>
+    <task id="LOCAL-00002" summary="홈, 북클럽 탭 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 RecyclerView까지 구현&#10;- Top Navigation Person Icon 눌렀을 때 내정보 탭으로 이동 구현">
+      <created>1685926745740</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1687148617913</updated>
+      <updated>1685926745740</updated>
     </task>
-    <task id="LOCAL-00003" summary="로그인 서비스 구현 &#10;버튼 클릭시 페이지 전환 설정&#10;전환하는 과정이 의도와 벗어남(수정 필요)">
-      <created>1687171603277</created>
+    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/grit' into grit&#10;&#10;# Conflicts:&#10;#&#9;.idea/deploymentTargetDropDown.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/src/main/java/com/example/bigdipper/ExploreFragment.kt&#10;#&#9;app/src/main/java/com/example/bigdipper/MainActivity.kt&#10;#&#9;app/src/main/res/layout/activity_main.xml&#10;#&#9;app/src/main/res/layout/row.xml">
+      <created>1685926927120</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1687171603277</updated>
+      <updated>1685926927120</updated>
     </task>
-    <task id="LOCAL-00004" summary="로그인 서비스 구현 &#10;버튼 클릭시 페이지 전환 설정&#10;전환하는 과정이 의도와 벗어남(수정 필요)">
-      <created>1687180707751</created>
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/grit' into grit&#10;&#10;# Conflicts:&#10;#&#9;.idea/deploymentTargetDropDown.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/src/main/java/com/example/bigdipper/ExploreFragment.kt&#10;#&#9;app/src/main/java/com/example/bigdipper/MainActivity.kt&#10;#&#9;app/src/main/res/layout/activity_main.xml&#10;#&#9;app/src/main/res/layout/row.xml">
+      <created>1685926942407</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1687180707752</updated>
+      <updated>1685926942407</updated>
     </task>
-    <task id="LOCAL-00005" summary="Login Service">
+    <task id="LOCAL-00005" summary="Merge remote-tracking branch 'origin/grit' into grit&#10;&#10;# Conflicts:&#10;#&#9;.idea/deploymentTargetDropDown.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/src/main/java/com/example/bigdipper/ExploreFragment.kt&#10;#&#9;app/src/main/java/com/example/bigdipper/MainActivity.kt&#10;#&#9;app/src/main/res/layout/activity_main.xml&#10;#&#9;app/src/main/res/layout/row.xml">
+      <created>1685926970685</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685926970685</updated>
+    </task>
+    <task id="LOCAL-00006" summary="홈, 북클럽 탭 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 RecyclerView까지 구현">
+      <created>1685927178644</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685927178644</updated>
+    </task>
+    <task id="LOCAL-00007" summary="북클럽 상세페이지, 탐색 페이지(필터, 검색창) UI 개발">
+      <created>1686547652993</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686547652993</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Login Service">
       <created>1687252842061</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
       <updated>1687252842061</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,10 +350,29 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="참여 중인 북클럽까지 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 제목과 설명만 구현" />
-    <MESSAGE value="로그인 서비스 아직 수정중&#10;필요 문서 수정&#10;pull하기 위해서 commit&#10;api 및 서비스 키 설정" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/grit' into grit&#10;&#10;# Conflicts:&#10;#&#9;.idea/deploymentTargetDropDown.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/src/main/java/com/example/bigdipper/ExploreFragment.kt&#10;#&#9;app/src/main/java/com/example/bigdipper/MainActivity.kt&#10;#&#9;app/src/main/res/layout/activity_main.xml&#10;#&#9;app/src/main/res/layout/row.xml" />
+    <MESSAGE value="홈, 북클럽 탭 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 RecyclerView까지 구현&#10;- Top Navigation Person Icon 눌렀을 때 내정보 탭으로 이동 구현" />
+    <MESSAGE value="홈, 북클럽 탭 UI 완료&#10;&#10;- splash 화면&#10;- 시작하기 화면&#10;- 홈, 북클럽, 내정보 navigator 구현&#10;- 참여 중인 북클럽 UI 구현 (더미데이터로 테스트)&#10;- 북클럽 둘러보기 RecyclerView까지 구현" />
+    <MESSAGE value="북클럽 상세페이지, 탐색 페이지(필터, 검색창) UI 개발" />
+    <MESSAGE value="북클럽 필터 구현 완료&#10;북클럽 검색창 구현 완료&#10;북클럽 상세페이지 구현 완료" />
     <MESSAGE value="로그인 서비스 구현 &#10;버튼 클릭시 페이지 전환 설정&#10;전환하는 과정이 의도와 벗어남(수정 필요)" />
     <MESSAGE value="Login Service" />
     <option name="LAST_COMMIT_MESSAGE" value="Login Service" />

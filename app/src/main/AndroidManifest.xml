@@ -13,10 +13,31 @@
         android:theme="@style/Theme.BigDipper"
         tools:targetApi="31">
         <activity
-            android:name=".GoogleLogin"
+            android:name=".WritingPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MakingClub"
+            android:exported="false" />
+        <activity
+            android:name=".ForumActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookClubPage"
+            android:exported="false" />
+        <activity
+            android:name=".BookClubDetail"
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".GoogleLogin"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,9 +45,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"></activity>
     </application>
 
 </manifest>

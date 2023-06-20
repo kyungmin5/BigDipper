@@ -1,33 +1,32 @@
 package com.example.bigdipper
 
 import android.os.Bundle
+import android.provider.ContactsContract.Profile
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import com.example.bigdipper.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
-    // TODOLIST: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    var binding :FragmentProfileBinding? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+        binding.writingBtn.setOnClickListener {
+            val exploreFragment = ExploreFragment()
+            (activity as MainActivity).replaceFragment(HomeFragment())
+            (activity as MainActivity).binding.mainBottomNavigation.menu.findItem(R.id.home).isChecked = true
+        }
+
+        return binding.root
     }
 
+    override fun onDestroyView() {
+        binding = null
+        super.onDestroyView()
+    }
 }
