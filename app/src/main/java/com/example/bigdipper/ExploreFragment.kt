@@ -1,5 +1,6 @@
 package com.example.bigdipper
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -34,6 +35,7 @@ class ExploreFragment : Fragment() {
     //lateinit var items: ArrayList<BookClubData>
     lateinit var filteredData : ArrayList<BookClubData>
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val primaryColor = ContextCompat.getColor(
@@ -50,10 +52,7 @@ class ExploreFragment : Fragment() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-    }
     override fun onResume() {
         super.onResume()
         binding.search.clearFocus()

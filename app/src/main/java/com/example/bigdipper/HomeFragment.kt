@@ -17,6 +17,8 @@ private var join = false;
 class HomeFragment: Fragment() {
     // TODOLIST: Rename and change types of parameters
     lateinit var adapter: BookClubAdapter
+    val userManager = UserDataManager.getInstance()
+    val CurUserData = userManager.getUserData()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }

@@ -34,31 +34,11 @@ class BookClubPage : AppCompatActivity() {
         adapter.notifyDataSetChanged()
     }
 
-<<<<<<< HEAD
 
-=======
-    private fun initData() {
-<<<<<<< HEAD
-        writeList.add(Write("뻘글6", "안녕하세요", "06/18 01:43",5))
-        writeList.add(Write("뻘글2", "안녕하세요", "06/18 01:43",4))
-        writeList.add(Write("뻘글3", "안녕하세요", "06/18 01:43",3))
-        writeList.add(Write("뻘글4", "안녕하세요", "06/18 01:43",2))
-        writeList.add(Write("뻘글5", "안녕하세요", "06/18 01:43",1))
-    }
 
     private fun initLayout(){
-        val bookData = intent.getSerializableExtra("data") as? BookClubData
-=======
-//        writeLi.add(Write("뻘글6", "안녕하세요", 5))
-//        writeList.add(Write("뻘글2", "안녕하세요", 4))
-//        writeList.add(Write("뻘글3", "안녕하세요", 3))
-//        writeList.add(Write("뻘글4", "안녕하세요", 2))
-//        writeList.add(Write("뻘글5", "안녕하세요", 1))
-    }
->>>>>>> 0427aa3d19095ed47066477e649ecbbb644b9b84
 
-    private fun initLayout(){
->>>>>>> fc8e9161fe346b88ca6d374a9f618faf43ce751f
+
         binding.apply {
             backBtn.setOnClickListener {
                 finish()
