@@ -38,6 +38,7 @@ class ProfileFragment : Fragment() {
             Log.i("asdasd",CurUserData.toString())
             handle.text=CurUserData!!.NickName
             intro.text=CurUserData!!.explain
+
         }
     }
     override fun onDestroyView() {
