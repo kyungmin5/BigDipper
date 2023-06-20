@@ -11,9 +11,9 @@ import java.util.*
 
 class BookClubPage : AppCompatActivity() {
     lateinit var binding: ActivityBookClubPageBinding
-    var writeList = arrayListOf<Write>()
+    //var writeList = arrayListOf<Write>()
     lateinit var adapter:WriteListAdapter
-
+    val bookData = intent.getSerializableExtra("clickedData") as? BookClubData
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityBookClubPageBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -26,21 +26,20 @@ class BookClubPage : AppCompatActivity() {
 
     private fun initRecyclerView() {
         binding.writeView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
-        adapter = WriteListAdapter(writeList)
+        adapter = WriteListAdapter(bookData?.postList)
         adapter.itemClickListener = null
         binding.writeView.adapter = adapter
     }
 
     private fun initData() {
-        writeList.add(Write("뻘글6", "안녕하세요", 5))
-        writeList.add(Write("뻘글2", "안녕하세요", 4))
-        writeList.add(Write("뻘글3", "안녕하세요", 3))
-        writeList.add(Write("뻘글4", "안녕하세요", 2))
-        writeList.add(Write("뻘글5", "안녕하세요", 1))
+//        writeLi.add(Write("뻘글6", "안녕하세요", 5))
+//        writeList.add(Write("뻘글2", "안녕하세요", 4))
+//        writeList.add(Write("뻘글3", "안녕하세요", 3))
+//        writeList.add(Write("뻘글4", "안녕하세요", 2))
+//        writeList.add(Write("뻘글5", "안녕하세요", 1))
     }
 
     private fun initLayout(){
-        val bookData = intent.getSerializableExtra("clickedData") as? BookClubData
         binding.apply {
             backBtn.setOnClickListener {
                 finish()
