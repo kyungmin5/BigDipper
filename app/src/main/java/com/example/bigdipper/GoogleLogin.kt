@@ -73,6 +73,7 @@ class GoogleLogin : AppCompatActivity() {
         btnLogoutGoogle!!.setOnClickListener(View.OnClickListener { view: View? ->
             signOut() //로그아웃
         })
+
     }
 
     private fun signIn() {
@@ -164,4 +165,6 @@ class GoogleLogin : AppCompatActivity() {
                 this
             ) { task: Task<Void?>? -> }
     }
+
+
 }
