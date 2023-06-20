@@ -6,15 +6,16 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bigdipper.databinding.ActivityForumBinding
 
+@Suppress("DEPRECATION")
 class ForumActivity : AppCompatActivity() {
     lateinit var binding:ActivityForumBinding
-    var writeList = arrayListOf<Write>()
+
     lateinit var adapter:WriteListAdapter2
+    var bookData:BookClubData?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityForumBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-
-        initData()
+        bookData=intent.getSerializableExtra("bookData") as? BookClubData
         initRecyclerView()
         initLayout()
 
@@ -29,19 +30,13 @@ class ForumActivity : AppCompatActivity() {
         }
     }
 
-    private fun initData() {
-        writeList.add(Write("뻘글6", "안녕하세요", 5))
-        writeList.add(Write("뻘글2", "안녕하세요", 4))
-        writeList.add(Write("뻘글3", "안녕하세요", 3))
-        writeList.add(Write("뻘글4", "안녕하세요", 2))
-        writeList.add(Write("뻘글5", "안녕하세요", 1))
-    }
+
 
     private fun initRecyclerView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
-        adapter = WriteListAdapter2(writeList)
+        adapter = WriteListAdapter2(bookData?.postList)
         adapter.itemClickListener = object : WriteListAdapter2.OnItemClickListener {
-            override fun OnItemClick(data: Write) {
+            override fun OnItemClick(data: PostData) {
                 val intent = Intent(this@ForumActivity, PostActivity::class.java)
                 intent.putExtra("post", data)
                 startActivity(intent)

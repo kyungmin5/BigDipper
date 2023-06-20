@@ -7,9 +7,11 @@ import com.example.bigdipper.databinding.WriteRowBinding
 import java.lang.Integer.min
 
 //게시판 전체보기 액티비티를 위한 어댑터
-class WriteListAdapter2(val writeList: ArrayList<Write>): RecyclerView.Adapter<WriteListAdapter2.WriteViewHolder>(){
+class WriteListAdapter2(val writeList: ArrayList<PostData>?): RecyclerView.Adapter<WriteListAdapter2.WriteViewHolder>(){
     interface OnItemClickListener {
-        fun OnItemClick(data: Write)
+        fun OnItemClick(data: PostData){
+
+        }
     }
 
     var itemClickListener: OnItemClickListener?=null
@@ -17,7 +19,7 @@ class WriteListAdapter2(val writeList: ArrayList<Write>): RecyclerView.Adapter<W
     inner class WriteViewHolder(val binding: WriteRowBinding):RecyclerView.ViewHolder(binding.root) {
         init {
             binding.title.setOnClickListener {
-                itemClickListener?.OnItemClick(writeList[adapterPosition])
+                itemClickListener?.OnItemClick(writeList!![adapterPosition])
             }
         }
     }
@@ -31,13 +33,16 @@ class WriteListAdapter2(val writeList: ArrayList<Write>): RecyclerView.Adapter<W
     }
 
     override fun onBindViewHolder(holder: WriteViewHolder, position: Int) {
-        var data = writeList[position]
+        var data = writeList!![position]
         holder.binding.title.text = data.title
         holder.binding.content.text = data.content
-        holder.binding.boomUp.text = "추천 ${data.boomUp}개"
+        holder.binding.boomUp.text = "추천 ${data.likes}개"
     }
 
     override fun getItemCount(): Int {
-        return writeList.size
+        if(writeList==null){
+            return 0
+        }
+        return writeList!!.size
     }
 }
