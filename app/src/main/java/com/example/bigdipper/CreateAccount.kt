@@ -49,7 +49,9 @@ class CreateAccount : AppCompatActivity() {
             var readed = arrayListOf<String>()
             readed.add("dummy")
             var postarray= arrayListOf<PostData>()
+
             var postData=PostData("제목","작성자","내용",0, arrayListOf<CommentData>(), "06/21 05:01")
+
             postarray.add(postData)
             var bookarray= arrayListOf<BookClubData>()
             val bookclub = BookClubData(
