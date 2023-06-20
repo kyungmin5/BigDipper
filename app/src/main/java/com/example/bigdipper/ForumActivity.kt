@@ -30,7 +30,17 @@ class ForumActivity : AppCompatActivity() {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+    private fun initData() {
+        writeList.add(Write("뻘글6", "안녕하세요", "06/20 21:30",5))
+        writeList.add(Write("뻘글2", "안녕하세요", "06/20 21:30",4))
+        writeList.add(Write("뻘글3", "안녕하세요", "06/20 21:30",3))
+        writeList.add(Write("뻘글4", "안녕하세요", "06/20 21:30",2))
+        writeList.add(Write("뻘글5", "안녕하세요", "06/20 21:30",1))
+    }
+>>>>>>> 0427aa3d19095ed47066477e649ecbbb644b9b84
 
     private fun initRecyclerView() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)

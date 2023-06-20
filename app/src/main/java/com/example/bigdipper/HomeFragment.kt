@@ -1,5 +1,6 @@
 package com.example.bigdipper
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -32,7 +33,9 @@ class HomeFragment: Fragment() {
             adapter =  BookClubAdapter(dummyGenerator())
             adapter.itemClickListener = object:BookClubAdapter.onItemClickListener{
                 override fun onItemClick(data: BookClubData, position: Int) {
-                    Toast.makeText(context, data.clubName, Toast.LENGTH_SHORT).show()
+                    val intent = Intent(activity, BookClubPage::class.java)
+                    intent.putExtra("data", data)
+                    startActivity(intent)
                 }
             }
             joinedBookClubList.adapter = adapter

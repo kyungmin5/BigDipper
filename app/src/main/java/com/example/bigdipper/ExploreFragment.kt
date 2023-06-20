@@ -102,7 +102,7 @@ class ExploreFragment : Fragment() {
             adapter = BookClubAdapter(items)
             adapter.itemClickListener = object : BookClubAdapter.onItemClickListener {
                 override fun onItemClick(data: BookClubData, position: Int) {
-                    val intent = Intent(context, BookClubPage::class.java)
+                    val intent = Intent(context, BookClubDetail::class.java)
                     intent.putExtra("clickedData", data)
                     startActivity(intent)
                 }
@@ -139,7 +139,6 @@ class ExploreFragment : Fragment() {
             }
         }
     }
-
 
 //            createBookClubFab.setOnClickListener {
 //
