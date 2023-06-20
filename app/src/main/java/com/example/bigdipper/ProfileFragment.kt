@@ -28,16 +28,17 @@ class ProfileFragment : Fragment() {
             (activity as MainActivity).replaceFragment(HomeFragment())
             (activity as MainActivity).binding.mainBottomNavigation.menu.findItem(R.id.home).isChecked = true
         }
-        Log.i("asdasdadsasd",CurUserData.toString())
         init()
         return binding.root
     }
 
     private fun init(){
         binding.apply {
-            Log.i("asdasd",CurUserData.toString())
             handle.text=CurUserData!!.NickName
             intro.text=CurUserData!!.explain
+            postCnt.text = (CurUserData.PostList!!.size - 1).toString()
+            readBookCnt.text = (CurUserData.readedList!!.size - 1).toString()
+            partClubCnt.text = (CurUserData.bookClubList!!.size).toString()
             when(CurUserData?.lv) {
                 in 0..100 -> {
                     starImage.setAnimation(R.raw.starlevel1)
@@ -49,6 +50,7 @@ class ProfileFragment : Fragment() {
                     starImage.setAnimation(R.raw.starlevel3)
                 }
             }
+
         }
     }
     override fun onDestroyView() {

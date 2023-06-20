@@ -106,10 +106,11 @@
                             android:textStyle="bold"
                             android:layout_marginBottom="5dp"
                             android:text="참여 북클럽" />
+
                         <TextView
+                            android:id="@+id/partClubCnt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/partClubCnt"
                             android:text="0" />
                     </LinearLayout>
 
@@ -129,11 +130,11 @@
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
                             android:layout_marginBottom="5dp"
-                            android:text="관심 책" />
+                            android:text="작성글" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/loveBookCnt"
+                            android:id="@+id/postCnt"
                             android:text="0" />
                     </LinearLayout>
                 </LinearLayout>
@@ -161,7 +162,6 @@
 
 
             <LinearLayout
-                android:layout_marginTop="40dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -169,12 +169,14 @@
                     android:id="@+id/writingHeader"
                     android:paddingHorizontal="30dp"
                     android:fontFamily="@font/notosanskr_bold"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textColor="@color/black_main"
-                    android:text="내가 작성한 글"
+                    android:text="경험치 : 0"
+                    android:textAlignment="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <Button
+                    android:layout_marginTop="30dp"
                     android:id="@+id/writingBtn"
                     android:textColor="@color/white"
                     android:background="@drawable/radius"
