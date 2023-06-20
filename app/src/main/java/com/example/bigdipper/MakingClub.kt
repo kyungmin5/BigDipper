@@ -14,6 +14,9 @@ import java.time.format.DateTimeFormatter
 class MakingClub : AppCompatActivity() {
     lateinit var binding:ActivityMakingClubBinding
     var time:String?=null
+    val userManager = UserDataManager.getInstance()
+    val CurUserData = userManager.getUserData()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMakingClubBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -110,8 +113,8 @@ class MakingClub : AppCompatActivity() {
                             totalMemberNum = personnelInput.text.toString(),
                             clubRules = rule.text.toString(),
                             booksHaveRead = arrayListOf(),
-                            creator = "만쥬",
-                            userList = arrayListOf("만쥬"),
+                            creator = CurUserData!!.NickName,
+                            userList = arrayListOf(creator),
                             postList = arrayListOf(PostData("", "", "", 0,
 
                                 arrayListOf( CommentData("","",0, "")), ""))
