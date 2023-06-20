@@ -30,6 +30,7 @@ class ExploreFragment : Fragment() {
     val CurUserData = userManager.getUserData()
     lateinit var items:ArrayList<BookClubData>
     val itemList = mutableListOf<BookClubData>()
+    var bookClubNames = mutableListOf<String>()
 
 
     // itemList을 리사이클러뷰에 설정
@@ -63,19 +64,37 @@ class ExploreFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val primaryColor = ContextCompat.getColor(
-            requireContext(),
-            com.google.android.material.R.color.design_default_color_primary
-        )
+
         binding = FragmentExploreBinding.inflate(inflater, container, false)
+        if(CurUserData?.bookClubList==null){
+
+        }
+        else {
+            for (bookClubData in CurUserData!!.bookClubList) {
+                val bookClubName = bookClubData.clubName // 북클럽의 이름 추출
+                bookClubNames.add(bookClubName) // 리스트에 북클럽 이름 추가
+            }
+        }
+
         val databaseReference = FirebaseDatabase.getInstance().reference
         val clubListRef = databaseReference.child("clubs")
+
         clubListRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (data in dataSnapshot.children) {
                     val club = data.getValue(BookClubData::class.java)
                     club?.let {
-                        itemList.add(club)
+                        var flag=0
+                            for (i in bookClubNames) {
+                                if (club.clubName == i) {
+                                    flag = 1
+                                    break
+                                }
+
+                        }
+                        if(flag==0){
+                            itemList.add(club)
+                        }
                     }
                 }
                 items=ArrayList(itemList)
