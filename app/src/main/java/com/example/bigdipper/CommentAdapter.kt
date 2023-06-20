@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bigdipper.databinding.CommentRowBinding
 import com.example.bigdipper.databinding.WriteRowBinding
 
-class CommentAdapter(val comments:ArrayList<Comment>) : RecyclerView.Adapter<CommentAdapter.CommentViewHolder>() {
+class CommentAdapter(val comments:ArrayList<CommentData>) : RecyclerView.Adapter<CommentAdapter.CommentViewHolder>() {
     interface OnItemClickListener {
-        fun OnItemClick(data: Comment, position: Int)
+        fun OnItemClick(data: CommentData, position: Int)
     }
 
     var itemClickListener: OnItemClickListener?=null
@@ -32,9 +32,9 @@ class CommentAdapter(val comments:ArrayList<Comment>) : RecyclerView.Adapter<Com
     override fun onBindViewHolder(holder: CommentAdapter.CommentViewHolder, position: Int) {
         var data = comments[position]
         holder.binding.handle.text = data.author
-        holder.binding.commentContent.text = data.comment
+        holder.binding.commentContent.text = data.content
         holder.binding.commentDate.text = data.date
-        holder.binding.thumbCnt.text = data.thumbCnt.toString()
+        holder.binding.thumbCnt.text = data.likes.toString()
     }
 
     override fun getItemCount(): Int {
