@@ -43,14 +43,12 @@ class BookClubPage : AppCompatActivity() {
         adapter.notifyDataSetChanged()
     }
 
-
-
     private fun initLayout(){
         binding.apply {
             backBtn.setOnClickListener {
                 finish()
             }
-            bookData = intent.getSerializableExtra("clickedData") as? BookClubData
+            bookData = intent.getSerializableExtra("data") as? BookClubData
             initRecyclerView()
             if (bookData != null) {
                 // 북클럽 이름과 소개

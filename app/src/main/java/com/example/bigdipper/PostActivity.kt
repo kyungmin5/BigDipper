@@ -1,7 +1,6 @@
 package com.example.bigdipper
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -17,17 +16,21 @@ class PostActivity : AppCompatActivity() {
     lateinit var adapter:CommentAdapter
     val userManager = UserDataManager.getInstance()
     val CurUserData = userManager.getUserData()
-    var post = intent.getSerializableExtra("post") as? PostData
-    var club = intent.getSerializableExtra("club") as? BookClubData
-    var commentList = post?.comments
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityPostBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
 
-        initLayout()
-        initRecyclerView()
+        var post = intent?.getSerializableExtra("post") as? PostData
+        var club = intent?.getSerializableExtra("club") as? BookClubData
+        var commentList = post?.comments
+
+        initLayout(post)
+        initRecyclerView(commentList)
 
         setContentView(binding.root)
+
+        binding.backBtn.setOnClickListener { finish() }
 
         binding.sendBtn.setOnClickListener {
             val content = binding.editText.text.toString()
@@ -61,7 +64,7 @@ class PostActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun initLayout() {
+    private fun initLayout(post:PostData?) {
         binding.title.text = post?.title
         binding.handle.text = post?.author
         binding.content.text = post?.content
@@ -69,7 +72,7 @@ class PostActivity : AppCompatActivity() {
         binding.thumbCnt.text = post?.likes.toString() + "개"
     }
 
-    private fun initRecyclerView() {
+    private fun initRecyclerView(commentList: ArrayList<CommentData>?) {
         binding.commentsView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
         adapter = CommentAdapter(commentList!!)
         adapter.itemClickListener = object : CommentAdapter.OnItemClickListener {
