@@ -113,11 +113,8 @@ class MakingClub : AppCompatActivity() {
                             creator = "만쥬",
                             userList = arrayListOf("만쥬"),
                             postList = arrayListOf(PostData("", "", "", 0,
-<<<<<<< HEAD
-                                arrayListOf( CommentData("","",0, "")), ""))
-=======
                                 arrayListOf( CommentData("","",0,"")),""))
->>>>>>> 580bb57df38b1b9a90f77c1c665c967682659954
+
                         )
                         val database = FirebaseDatabase.getInstance()
                         val reference = database.reference.child("clubs")
@@ -133,26 +130,5 @@ class MakingClub : AppCompatActivity() {
 
 
 
-//        createBookClubFab.setOnClickListener {
-//
-//        // 북클럽 정보 생성
-//        val club = BookClubData(
-//            clubImg = "imgstr",
-//            currentBook = "마음의 치유",
-//            clubName = "철학과 생각",
-//            tags = arrayListOf("Self-Improvement/Hobby", "Culture/Art"),
-//            ageGroup = "All ages",
-//            clubDetails = "철학 관련 책을 읽으며 토론을 주로 하는 북클럽입니다. 관심 있는 분 많이 오세요.",
-//            memberNum = "12",
-//            createdAt = "2023-06-15T16:45:00Z",
-//            totalMemberNum = "30",
-//            clubRules = "북클럽 규칙",
-//            booksHaveRead = arrayListOf("읽은 책1", "읽은 책2"),
-//            creator = "북클럽 생성자"
-//        )
-//
-//        val database = FirebaseDatabase.getInstance()
-//        val reference = database.reference.child("clubs")
-//        reference.push().setValue(club)
-//    }
+
 }
