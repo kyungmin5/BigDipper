@@ -48,6 +48,7 @@ class BookClubDetail : AppCompatActivity() {
                                     user?.bookClubList = ArrayList() // 새로운 ArrayList로 초기화
                                 }
                                 user?.bookClubList?.add(bookData!!)
+                                data.ref.setValue(user)
                             }
                         }
                     }

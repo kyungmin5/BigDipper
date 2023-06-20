@@ -122,32 +122,52 @@ class BookClubPage : AppCompatActivity() {
                     val reference = database.getReference("clubs")
 
                     val clubRef = reference.child(bookData!!.clubName)
+                    val databaseReference = FirebaseDatabase.getInstance().reference.child("clubs")
+                    databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(dataSnapshot: DataSnapshot) {
+                            for (data in dataSnapshot.children) {
+                                var book = data.getValue(BookClubData::class.java)
+                                if (book!!.clubName == bookData!!.clubName) {
+                                    book.currentBook = "없음"
 
-                    clubRef.child("currentBook").setValue("없음")
+                                    for (user in book.userList) {
+                                        val userReference = database.getReference("users")
+                                        var oldValue: Int = 0
+                                        userReference.addListenerForSingleValueEvent(object :
+                                            ValueEventListener {
+                                            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                                                for (data in dataSnapshot.children) {
+                                                    var users = data.getValue(UserData::class.java)
+                                                    if (users!!.nickName == user) {
+                                                        users.lv += 150
+                                                        CurUserData!!.lv+=150
+                                                    }
+                                                    data.ref.setValue(users)
+                                                }
+                                            }
 
-                    val userList = clubRef.child("userList") as ArrayList<String>
-                    for (user in userList) {
-                        val userReference = database.getReference("users")
-                        val userRef = userReference.child(user)
-
-                        var oldValue:Int = 0
-                        userRef.addListenerForSingleValueEvent(object : ValueEventListener {
-                            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                                if (dataSnapshot.exists()) {
-                                    oldValue = dataSnapshot.getValue(Int::class.java)!!
-                                } else {
-                                    Toast.makeText(this@BookClubPage, "그런 유저는 없습니다.", Toast.LENGTH_SHORT).show()
+                                            override fun onCancelled(error: DatabaseError) {
+                                                TODO("Not yet implemented")
+                                            }
+                                        })
+                                    }
+                                    data.ref.setValue(book)
+                                    break
                                 }
+
                             }
 
-                            override fun onCancelled(databaseError: DatabaseError) {
-                                Toast.makeText(this@BookClubPage, "DB 접근 실패.", Toast.LENGTH_SHORT).show()
-                            }
-                        })
-                        userRef.child("lv").setValue(oldValue + 200)
-                        CurUserData!!.lv += 200
-                        userManager.setUserData(CurUserData!!)
-                    }
+                        }
+
+                        override fun onCancelled(error: DatabaseError) {
+                            TODO("Not yet implemented")
+                        }
+
+                    })
+                    val intent = Intent(this@BookClubPage, MainActivity::class.java)
+
+                    startActivity(intent)
+
                 }
                 .setNegativeButton("취소") { dialog: DialogInterface, which: Int ->
                     dialog.dismiss()

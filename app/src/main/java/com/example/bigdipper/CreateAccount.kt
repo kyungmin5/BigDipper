@@ -54,7 +54,7 @@ class CreateAccount : AppCompatActivity() {
 
             postarray.add(postData)
             var bookarray= arrayListOf<BookClubData>()
-            val bookclub = BookClubData(
+            val bookClub = BookClubData(
                     clubImg = "imgstr",
                     currentBook = "마음의 치유",
                     clubName = "dummy",
@@ -70,7 +70,7 @@ class CreateAccount : AppCompatActivity() {
                     userList = arrayListOf(""),
                     postarray
                 )
-            bookarray.add(bookclub)
+            bookarray.add(bookClub)
 
             // 유저 데이터 설정
             val userData = UserData("uid123",userId,userPassword, userNickname, userStatus, 1, bookarray, readed, postarray)

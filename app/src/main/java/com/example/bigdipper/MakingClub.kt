@@ -149,9 +149,7 @@ class MakingClub : AppCompatActivity() {
                                 // 쿼리 취소 또는 오류 처리
                             }
                         })
-                        val intent = Intent(this@MakingClub, MainActivity::class.java)
-
-                        startActivity(intent)
+                        finish()
                     }
                 }
 

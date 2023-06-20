@@ -39,6 +39,7 @@ class ProfileFragment : Fragment() {
             postCnt.text = (CurUserData.PostList!!.size - 1).toString()
             readBookCnt.text = (CurUserData.readedList!!.size - 1).toString()
             partClubCnt.text = (CurUserData.bookClubList!!.size).toString()
+            writingHeader.text="경험치 : "+CurUserData.lv
             when(CurUserData?.lv) {
                 in 0..100 -> {
                     starImage.setAnimation(R.raw.starlevel1)
