@@ -43,13 +43,13 @@ class CreateAccount : AppCompatActivity() {
             var readed = arrayListOf<String>()
             readed.add("dummy")
             var postarray= arrayListOf<PostData>()
-            var postData=PostData("제목","작성자","내용",0, arrayListOf<CommentData>())
+            var postData=PostData("제목","작성자","내용",0, arrayListOf<CommentData>(),"")
             postarray.add(postData)
             var bookarray= arrayListOf<BookClubData>()
             val bookclub = BookClubData(
                     clubImg = "imgstr",
                     currentBook = "마음의 치유",
-                    clubName = "철학과 생각",
+                    clubName = "dummy",
                     tags = arrayListOf("Self-Improvement/Hobby", "Culture/Art"),
                     ageGroup = "All ages",
                     clubDetails = "철학 관련 책을 읽으며 토론을 주로 하는 북클럽입니다. 관심 있는 분 많이 오세요.",
@@ -66,20 +66,15 @@ class CreateAccount : AppCompatActivity() {
 
             // 유저 데이터 설정
             val userData = UserData("uid123",userId,userPassword, userNickname, userStatus, 1, bookarray, readed, postarray)
-            val bookClubList: ArrayList<BookClubData>? = null // 빈 배열 대신 null 값으로 초기화
 
-// 데이터베이스에 bookClubList 값을 할당
-            databaseReference.child("users").child("bookClubList").setValue(bookClubList)
-                .addOnSuccessListener {
-                    // 값 저장 성공
-                }
-                .addOnFailureListener { error ->
-                    // 값 저장 실패
-                }
+
+
+
+
+
             val databaseReference = FirebaseDatabase.getInstance().reference.child("users")
             val userQuery = databaseReference.orderByChild("NickName").equalTo(userNickname)
             userManager.setUserData(userData)
-            Log.i("asdasdasd",userData.toString())
             userQuery.addListenerForSingleValueEvent(object : ValueEventListener {
 
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
