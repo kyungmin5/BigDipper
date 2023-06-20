@@ -40,8 +40,15 @@
     <EditText
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="제목"
+        android:id="@+id/postTitle"/>
+    <EditText
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/postContent"
+        android:hint="내용"
         android:background="@drawable/edittext_rounded_corner_rectangle"
         android:lines="20"/>
 

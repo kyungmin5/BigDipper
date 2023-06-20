@@ -21,16 +21,17 @@ data class PostData(
     val content: String,
     val title: String,
     val likes: Int,
-    val comments: ArrayList<CommentData>
-
+    val comments: ArrayList<CommentData>,
+    val date:String
 ): Serializable{
-    constructor() : this("", "", "", 0, arrayListOf())
+    constructor() : this("", "", "", 0, arrayListOf(), "")
 }
 
 data class CommentData(
     val author: String,
     val content: String,
-    val likes: Int
+    var likes: Int,
+    val date: String
 ): Serializable{
-    constructor() : this("", "", 0)
+    constructor() : this("", "", 0, "06/21 03:24")
 }
