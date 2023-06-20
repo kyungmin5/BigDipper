@@ -61,7 +61,7 @@ class GoogleLogin : AppCompatActivity() {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
 
-        btnGoogleLogin = binding.btnGoogleSignIn
+        /*btnGoogleLogin = binding.btnGoogleSignIn
         btnGoogleLogin!!.setOnClickListener(View.OnClickListener { view: View? ->
             // 기존에 로그인 했던 계정을 확인한다.
             gsa = GoogleSignIn.getLastSignedInAccount(this@GoogleLogin)
@@ -71,12 +71,12 @@ class GoogleLogin : AppCompatActivity() {
                 startActivity(intent)
             }
             else signIn()
-        })
+        })*/
 
-        btnLogoutGoogle = binding.btnLogoutGoogle
+        /*btnLogoutGoogle = binding.btnLogoutGoogle
         btnLogoutGoogle!!.setOnClickListener(View.OnClickListener { view: View? ->
             signOut() //로그아웃
-        })
+        })*/
 
         btnNew = binding.createAccount
         btnNew!!.setOnClickListener(View.OnClickListener { view: View? ->

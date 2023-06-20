@@ -28,7 +28,7 @@ class WelcomeActivity : AppCompatActivity() {
         initLayout()
     }
     fun initLayout(){
-        val intent = Intent(this, GoogleLogin::class.java)
+        val intent = Intent(this, CommonLogin::class.java)
         var countClick = 0
         binding.apply{
             welcomeGuideView.adapter = ViewPagerAdapter(welcomeTitleList, welcomeDescriptionList, welcomeAnimationList)
