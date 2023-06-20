@@ -1,5 +1,6 @@
 package com.example.bigdipper
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -54,7 +55,13 @@ class BookClubDetail : AppCompatActivity() {
                     override fun onCancelled(databaseError: DatabaseError) {
                         // 쿼리 취소 또는 오류 처리
                     }
+
                 })
+                val intent = Intent(this@BookClubDetail, MainActivity::class.java)
+
+                startActivity(intent)
+
+
 
             }
             if (bookData != null) {
