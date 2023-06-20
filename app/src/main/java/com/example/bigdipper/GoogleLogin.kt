@@ -38,12 +38,14 @@ class GoogleLogin : AppCompatActivity() {
     // 구글  로그인 버튼
     private var btnGoogleLogin: SignInButton? = null
     private var btnLogoutGoogle: Button? = null
+    private var btnNew: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGoogleLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val intent = Intent(this, MainActivity::class.java)
+        val intent2 = Intent(this, CreateAccount::class.java)
 
         // 파이어베이스 인증 객체 선언
         mAuth = FirebaseAuth.getInstance()
@@ -73,6 +75,12 @@ class GoogleLogin : AppCompatActivity() {
         btnLogoutGoogle!!.setOnClickListener(View.OnClickListener { view: View? ->
             signOut() //로그아웃
         })
+
+        btnNew = binding.createAccount
+        btnNew!!.setOnClickListener(View.OnClickListener { view: View? ->
+            startActivity(intent2)
+        })
+
     }
 
     private fun signIn() {
@@ -164,4 +172,6 @@ class GoogleLogin : AppCompatActivity() {
                 this
             ) { task: Task<Void?>? -> }
     }
+
+
 }

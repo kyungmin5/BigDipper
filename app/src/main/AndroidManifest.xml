@@ -13,6 +13,12 @@
         android:theme="@style/Theme.BigDipper"
         tools:targetApi="31">
         <activity
+            android:name=".CreateAccount"
+            android:exported="false" />
+        <activity
+            android:name=".EmailLogin"
+            android:exported="false" />
+        <activity
             android:name=".WritingPostActivity"
             android:exported="false" />
         <activity
@@ -33,23 +39,18 @@
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">
-
-        </activity>
-
-        <activity
-            android:name=".GoogleLogin"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity
+            android:name=".GoogleLogin"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
