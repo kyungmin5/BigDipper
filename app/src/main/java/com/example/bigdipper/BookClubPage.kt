@@ -1,5 +1,6 @@
 package com.example.bigdipper
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -37,12 +38,20 @@ class BookClubPage : AppCompatActivity() {
 
     private fun initRecyclerView() {
         binding.writeView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
+        val iterator = bookData?.postList?.iterator()
+        while (iterator?.hasNext() == true) {
+            val post = iterator.next()
+            if (post.title == "") {
+                iterator.remove()
+            }
+        }
         adapter = WriteListAdapter(bookData?.postList)
         adapter.itemClickListener = null
         binding.writeView.adapter = adapter
         adapter.notifyDataSetChanged()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun initLayout(){
         binding.apply {
             backBtn.setOnClickListener {
@@ -79,6 +88,7 @@ class BookClubPage : AppCompatActivity() {
                 val intent = Intent(this@BookClubPage, ForumActivity::class.java)
                 intent.putExtra("bookData", bookData)
                 startActivity(intent)
+
             }
 
 

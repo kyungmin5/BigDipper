@@ -1,7 +1,10 @@
 package com.example.bigdipper
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.bigdipper.databinding.ActivityWritingPostBinding
 import com.google.firebase.database.DataSnapshot
@@ -41,10 +44,20 @@ class WritingPostActivity : AppCompatActivity() {
                             newPost["content"] = content
                             newPost["likes"] = 0
                             newPost["title"] = title
-                            newPost["comments"] = ArrayList<CommentData>().add(CommentData("관리자", "올바른 댓글 문화를 지켜나가요!", 0, "06/21 04:33"))
-
+                            val newComment = ArrayList<CommentData>()
+                            newComment.add(CommentData("관리자", "올바른 댓글 문화를 지켜나가요!", 0, "06/21 04:33"))
+                            newPost["comments"] = newComment
                             val clubRef = snapshot.ref
-                            clubRef.child("postList").push().setValue(newPost)
+                            val newPostData = PostData(CurUserData?.NickName!!, content, title, 0, newComment, "06/21 08:02")
+                            val pl = clubData?.postList
+                            pl?.add(newPostData)
+                            clubRef.child("postList").setValue(pl)
+
+                            val intent = Intent(this@WritingPostActivity, ForumActivity::class.java)
+
+                            intent.putExtra("update", newPostData)
+                            Log.i("newPost", newPostData.title)
+                            setResult(Activity.RESULT_OK, intent)
                             finish()
                         }
                     }
