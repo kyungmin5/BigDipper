@@ -19,9 +19,8 @@ class MainActivity : AppCompatActivity() {
     val userManager = UserDataManager.getInstance() // 싱글톤 객체 가져오기
 
     // 유저 데이터 설정
-    val userData = UserData("uid124", "강대훈", "자고싶다", 1, arrayListOf(), arrayListOf(), arrayListOf())
-    val uid = "uid124"
-
+    val userData = UserData("uid123","eogns47","kukuku", "강대훈", "자고싶다", 1, arrayListOf(), arrayListOf(), arrayListOf())
+    val uid = userData.Uid
     val databaseReference = FirebaseDatabase.getInstance().reference.child("users")
     val userQuery = databaseReference.orderByChild("Uid").equalTo(uid)
 
@@ -33,11 +32,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         initLayout()
-        userManager.setUserData(userData)
         init()
     }
 
     private fun init(){
+        userManager.setUserData(userData)
         userQuery.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
