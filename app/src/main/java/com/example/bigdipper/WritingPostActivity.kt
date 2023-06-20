@@ -48,7 +48,7 @@ class WritingPostActivity : AppCompatActivity() {
                             newComment.add(CommentData("관리자", "올바른 댓글 문화를 지켜나가요!", 0, "06/21 04:33"))
                             newPost["comments"] = newComment
                             val clubRef = snapshot.ref
-                            val newPostData = PostData(CurUserData?.NickName!!, content, title, 0, newComment, "06/21 08:02")
+                            val newPostData = PostData(CurUserData?.nickName!!, content, title, 0, newComment, "06/21 08:02")
                             val pl = clubData?.postList
                             pl?.add(newPostData)
                             clubRef.child("postList").setValue(pl)
