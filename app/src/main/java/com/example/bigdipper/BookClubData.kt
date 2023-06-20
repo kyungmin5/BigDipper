@@ -2,7 +2,7 @@ package com.example.bigdipper
 
 import java.io.Serializable
 
-data class BookClubData(val clubImg: String, val currentBook: String,
+data class BookClubData(val clubImg: String, var currentBook: String,
                         val clubName:String, val tags: ArrayList<String>,
                         val ageGroup: String, val clubDetails: String,
                         val memberNum: String, val createdAt: String,

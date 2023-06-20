@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
     val userManager = UserDataManager.getInstance() // 싱글톤 객체 가져오기
 
     // 유저 데이터 설정
-    val userData = UserData("uid123", "강대훈", "자고싶다", 1, arrayListOf(), arrayListOf(), arrayListOf())
-    val uid = "uid123"
+    val userData = UserData("uid124", "강대훈", "자고싶다", 1, arrayListOf(), arrayListOf(), arrayListOf())
+    val uid = "uid124"
 
     val databaseReference = FirebaseDatabase.getInstance().reference.child("users")
     val userQuery = databaseReference.orderByChild("Uid").equalTo(uid)
