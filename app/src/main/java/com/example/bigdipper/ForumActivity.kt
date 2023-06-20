@@ -30,11 +30,11 @@ class ForumActivity : AppCompatActivity() {
     }
 
     private fun initData() {
-        writeList.add(Write("뻘글6", "안녕하세요", 5))
-        writeList.add(Write("뻘글2", "안녕하세요", 4))
-        writeList.add(Write("뻘글3", "안녕하세요", 3))
-        writeList.add(Write("뻘글4", "안녕하세요", 2))
-        writeList.add(Write("뻘글5", "안녕하세요", 1))
+        writeList.add(Write("뻘글6", "안녕하세요", "06/20 21:30",5))
+        writeList.add(Write("뻘글2", "안녕하세요", "06/20 21:30",4))
+        writeList.add(Write("뻘글3", "안녕하세요", "06/20 21:30",3))
+        writeList.add(Write("뻘글4", "안녕하세요", "06/20 21:30",2))
+        writeList.add(Write("뻘글5", "안녕하세요", "06/20 21:30",1))
     }
 
     private fun initRecyclerView() {
