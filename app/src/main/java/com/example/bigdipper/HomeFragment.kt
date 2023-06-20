@@ -32,6 +32,15 @@ class HomeFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        val bookClubList = CurUserData!!.bookClubList!!
+        val iterator = bookClubList.iterator()
+
+        while (iterator.hasNext()) {
+            val bookClubData = iterator.next()
+            if (bookClubData.clubName == "dummy") {
+                iterator.remove()
+            }
+        }
         if (!CurUserData?.bookClubList.isNullOrEmpty()) {
             join = true
         }
@@ -41,6 +50,7 @@ class HomeFragment: Fragment() {
             view.findViewById<TextView>(R.id.exploreDetails).text = CurUserData?.NickName + "님, 독서하기 좋은 하루입니다!! \uD83C\uDFC3\uD83C\uDFFB\uD83D\uDCD6"
             val joinedBookClubList = view.findViewById<RecyclerView>(R.id.joinedBookClubList)
             joinedBookClubList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
             adapter =  BookClubAdapter(CurUserData!!.bookClubList!!)
             adapter.itemClickListener = object:BookClubAdapter.onItemClickListener{
                 override fun onItemClick(data: BookClubData, position: Int) {
