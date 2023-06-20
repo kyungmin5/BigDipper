@@ -35,7 +35,7 @@ class PostActivity : AppCompatActivity() {
 
         binding.sendBtn.setOnClickListener {
             val content = binding.editText.text.toString()
-            val newComment = CommentData(CurUserData!!.NickName, content, 0, "06/21 04:47")
+            val newComment = CommentData(CurUserData!!.nickName, content, 0, "06/21 04:47")
             commentList?.add(newComment)
             adapter.notifyItemInserted(commentList!!.size)
 

@@ -34,7 +34,7 @@ class ProfileFragment : Fragment() {
 
     private fun init(){
         binding.apply {
-            handle.text=CurUserData!!.NickName
+            handle.text=CurUserData!!.nickName
             intro.text=CurUserData!!.explain
             postCnt.text = (CurUserData.PostList!!.size - 1).toString()
             readBookCnt.text = (CurUserData.readedList!!.size - 1).toString()

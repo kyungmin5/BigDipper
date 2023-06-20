@@ -36,14 +36,14 @@ class BookClubDetail : AppCompatActivity() {
                 CurUserData?.bookClubList?.add(bookData!!)
                 userManager.setUserData(CurUserData!!)
                 val databaseReference = FirebaseDatabase.getInstance().reference.child("users")
-                val userNickname = CurUserData.NickName // 대조할 사용자의 닉네임
+                val userNickname = CurUserData.nickName // 대조할 사용자의 닉네임
 
                 databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                         for (data in dataSnapshot.children) {
                             var user = data.getValue(UserData::class.java)
-                            if (user!!.NickName == userNickname) {
+                            if (user!!.nickName == userNickname) {
                                 if (user?.bookClubList == null) {
                                     user?.bookClubList = ArrayList() // 새로운 ArrayList로 초기화
                                 }

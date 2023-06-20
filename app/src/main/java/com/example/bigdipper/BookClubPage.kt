@@ -93,7 +93,7 @@ class BookClubPage : AppCompatActivity() {
 
 
             setting.setOnClickListener {
-                if (CurUserData?.NickName == bookData?.creator) {
+                if (CurUserData?.nickName == bookData?.creator) {
                     setBook()
                 }
                 else {
