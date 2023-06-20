@@ -10,6 +10,7 @@ class PostActivity : AppCompatActivity() {
     lateinit var binding:ActivityPostBinding
     lateinit var adapter:CommentAdapter
     var commentList = arrayListOf<Comment>()
+    var post = intent.getSerializableExtra("post") as? PostData
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityPostBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)

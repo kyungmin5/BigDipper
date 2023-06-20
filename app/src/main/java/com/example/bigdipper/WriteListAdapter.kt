@@ -1,5 +1,6 @@
 package com.example.bigdipper
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -28,7 +29,10 @@ class WriteListAdapter(val writeList: ArrayList<PostData>?): RecyclerView.Adapte
     }
 
     override fun getItemCount(): Int {
-        return min(writeList!!.size, 3)
+        if(writeList==null){
+            return 0
+        }
+        return writeList!!.size
     }
 
     override fun onBindViewHolder(holder: WriteViewHolder, position: Int) {
@@ -36,5 +40,6 @@ class WriteListAdapter(val writeList: ArrayList<PostData>?): RecyclerView.Adapte
         holder.binding.title.text = data.title
         holder.binding.content.text = data.content
         holder.binding.boomUp.text = "추천 ${data.likes}개"
+        Log.i("aa",data.toString())
     }
 }

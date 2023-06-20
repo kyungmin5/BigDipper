@@ -9,18 +9,20 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
+@Suppress("DEPRECATION")
 class BookClubPage : AppCompatActivity() {
     lateinit var binding: ActivityBookClubPageBinding
     //var writeList = arrayListOf<Write>()
     lateinit var adapter:WriteListAdapter
-    val bookData = intent.getSerializableExtra("clickedData") as? BookClubData
+    var bookData:BookClubData?=null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityBookClubPageBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        initData()
-        initRecyclerView()
+
         initLayout()
     }
 
@@ -29,8 +31,12 @@ class BookClubPage : AppCompatActivity() {
         adapter = WriteListAdapter(bookData?.postList)
         adapter.itemClickListener = null
         binding.writeView.adapter = adapter
+        adapter.notifyDataSetChanged()
     }
 
+<<<<<<< HEAD
+
+=======
     private fun initData() {
 <<<<<<< HEAD
         writeList.add(Write("뻘글6", "안녕하세요", "06/18 01:43",5))
@@ -49,6 +55,7 @@ class BookClubPage : AppCompatActivity() {
 //        writeList.add(Write("뻘글4", "안녕하세요", 2))
 //        writeList.add(Write("뻘글5", "안녕하세요", 1))
     }
+>>>>>>> 0427aa3d19095ed47066477e649ecbbb644b9b84
 
     private fun initLayout(){
 >>>>>>> fc8e9161fe346b88ca6d374a9f618faf43ce751f
@@ -56,32 +63,36 @@ class BookClubPage : AppCompatActivity() {
             backBtn.setOnClickListener {
                 finish()
             }
+            bookData = intent.getSerializableExtra("clickedData") as? BookClubData
+            initRecyclerView()
             if (bookData != null) {
                 // 북클럽 이름과 소개
-                bookClubName.text = bookData.clubName
-                bookClubDetails.text = bookData.clubDetails
+                bookClubName.text = bookData?.clubName
+                bookClubDetails.text = bookData?.clubDetails
 
                 // 북클럽 정보 (개설일, 멤버 명수와 정원, 선호 연령대)
-                createdAt.text = ISOStringToDateInKorean(bookData.createdAt)
-                members.text = bookData.memberNum + " / " + bookData.totalMemberNum
-                preferedAge.text = ageFilterInKorean(bookData.ageGroup)
+                createdAt.text = ISOStringToDateInKorean(bookData!!.createdAt)
+                members.text = bookData?.memberNum + " / " + bookData?.totalMemberNum
+                preferedAge.text = ageFilterInKorean(bookData!!.ageGroup)
 
                 // 클럽 규칙
-                bookClubRules.text = bookData.clubRules
+                bookClubRules.text = bookData?.clubRules
 
                 // 리더 소개
-                bookClubLeader.text = bookData.creator
+                bookClubLeader.text = bookData?.creator
 
                 // 함께 읽은 책
-                currentBookTitle.text = "📕 ${bookData.currentBook}"
-                val booksStringArr = bookData.booksHaveRead.map{
+                currentBookTitle.text = "📕 ${bookData?.currentBook}"
+                val booksStringArr = bookData?.booksHaveRead?.map{
                     "📘 $it"
                 }
-                booksReadTogether.text = booksStringArr.joinToString("\n")
+                booksReadTogether.text = booksStringArr?.joinToString("\n")
             }
+            adapter.notifyDataSetChanged()
 
             SeeAllWrite.setOnClickListener {
                 val intent = Intent(this@BookClubPage, ForumActivity::class.java)
+                intent.putExtra("bookData", bookData)
                 startActivity(intent)
             }
         }
