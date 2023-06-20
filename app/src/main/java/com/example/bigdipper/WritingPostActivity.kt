@@ -45,7 +45,7 @@ class WritingPostActivity : AppCompatActivity() {
 
                             val clubRef = snapshot.ref
                             clubRef.child("postList").push().setValue(newPost)
-                            break
+                            finish()
                         }
                     }
                 }

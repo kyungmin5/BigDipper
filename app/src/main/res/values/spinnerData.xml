@@ -2,11 +2,21 @@
 <resources>
     <string name="menu_prompt">choose a theme</string>
     <string-array name="menu_arrays">
-        <item>갈비찜</item>
-        <item>부대찌개</item>
-        <item>차돌된장찌개</item>
-        <item>콩나물국</item>
-        <item>순두부찌개</item>
-        <item>냉이된장찌개</item>
+        <item>테마 선택</item>
+        <item>IT/Computer</item>
+        <item>Business/Economics</item>
+        <item>Education</item>
+        <item>PM/Marketing</item>
+        <item>Cooking/Travel</item>
+        <item>Religion/Volunteer</item>
+        <item>Nature/Environment</item>
+        <item>Politics/Society</item>
+        <item>Culture/Art</item>
+        <item>Humanities/Science</item>
+        <item>Self-Improvement/Hobby</item>
+        <item>Classics</item>
+        <item>Investment</item>
+        <item>Poetry/Novel</item>
+
     </string-array>
 </resources>

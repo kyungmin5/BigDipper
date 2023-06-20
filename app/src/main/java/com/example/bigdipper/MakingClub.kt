@@ -50,12 +50,21 @@ class MakingClub : AppCompatActivity() {
                 var theme=binding.spinner1.selectedItem as String
                 var theme2:String= binding.spinner2.selectedItem as String
                 var themeArray: ArrayList<String> = ArrayList()
-                themeArray.add(theme)
-                themeArray.add(theme2)
+                if(theme!="테마 선택") {
+                    themeArray.add(theme)
+                }
+                if(theme2!="테마 선택") {
+                    themeArray.add(theme2)
+                }
+
                 var creator = "북클럽 생성자"
                 Log.i("ddd",currentBook)
                 if(currentBook==""){
                     Toast.makeText(this@MakingClub,"읽을책 작성해주세요",Toast.LENGTH_SHORT).show()
+                }
+                else if(theme=="테마 선택" && theme2=="테마 선택"){
+                    Toast.makeText(this@MakingClub,"테마를 선택해주세요",Toast.LENGTH_SHORT).show()
+
                 }
                 else if(clubName.isEmpty()){
                     Toast.makeText(this@MakingClub,"북클럽 이름좀",Toast.LENGTH_SHORT).show()
@@ -93,7 +102,7 @@ class MakingClub : AppCompatActivity() {
                             clubImg = clubImg,
                             currentBook = currentBook,
                             clubName = clubName,
-                            tags = tags,
+                            tags = themeArray,
                             ageGroup = targetAge!!,
                             clubDetails = clubDetails,
                             memberNum = "1",
@@ -104,7 +113,11 @@ class MakingClub : AppCompatActivity() {
                             creator = "만쥬",
                             userList = arrayListOf("만쥬"),
                             postList = arrayListOf(PostData("", "", "", 0,
+<<<<<<< HEAD
+                                arrayListOf( CommentData("","",0, "")), ""))
+=======
                                 arrayListOf( CommentData("","",0,"")),""))
+>>>>>>> 580bb57df38b1b9a90f77c1c665c967682659954
                         )
                         val database = FirebaseDatabase.getInstance()
                         val reference = database.reference.child("clubs")
